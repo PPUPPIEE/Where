@@ -1,0 +1,22 @@
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem; /* Footer height */
+}
+
+footer {
+  display : flex;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFB400;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+
+}

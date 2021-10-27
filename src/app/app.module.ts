@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
+import { FooterComponent } from './footer/footer.component';
+import { DetailComponent } from './detail/detail.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { SearchComponent } from './search/search.component';
     HomeComponent,
     FormComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    FooterComponent,
+    DetailComponent,
+    NotFoundComponentComponent
   ],
   imports: [
     BrowserModule,
