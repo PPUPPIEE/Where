@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailComponent } from './detail/detail.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
     SearchComponent,
     FooterComponent,
     DetailComponent,
-    NotFoundComponentComponent
+    NotFoundComponentComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
