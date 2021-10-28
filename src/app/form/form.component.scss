@@ -5,8 +5,7 @@
 }
 .tabber {
     display: flex;
-    justify-content: space-between;
-    background-color: #1976b2;
+    background-color: orange;
     height: 65px;
 }
 .tl {
@@ -25,14 +24,14 @@ select {
 .main {
     width: 740px;
     margin: 2rem auto;
-    height: 300px;
+    height: 800px;
     box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
     border-radius: 10px;
     overflow: hidden;
 }
 .img {
     height: 100px;
-    background: #1976b2;
+    background: orange;
 }
 .textbox {
     padding: 1rem;
@@ -52,7 +51,6 @@ select {
 .checkbox {
     text-align: center;
     font-size: 26px;
-    height: 250px;
 }
 .checkbox label {
     padding-right: 1rem;
@@ -61,8 +59,44 @@ select {
     margin: 1rem auto;
     padding: 0.5rem;
 }
+.description label {
+    font-size: 26px;
+    padding-left: 2.5rem;
+}
+.des {
+    text-align: center;
+}
+textarea {
+    width: 664px; 
+    height: 219px;
+}
 a {
     cursor: pointer;
-    color: white;
+    color: black;
     text-decoration: none;
+}
+.inputimg {
+    padding-top: 1rem;
+}
+.inputimg input {
+
+}
+.button1 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
+}
+button {
+    padding: 20px 50px;
+    font-size: 20px;
+}
+.confirm {
+    background: orange;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+.cancel {
+    background:orange;
+    border-radius: 30px;
+    transition: all 0.25s ease;
 }
