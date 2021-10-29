@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DetailComponent } from './detail/detail.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { BannerComponent } from './banner/banner.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BannerComponent } from './banner/banner.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
