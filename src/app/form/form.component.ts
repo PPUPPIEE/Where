@@ -12,4 +12,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  save() {
+    console.log('asdasdasda')
+  }
+
 }

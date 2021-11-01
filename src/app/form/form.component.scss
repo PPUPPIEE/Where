@@ -1,103 +1,94 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
 }
-.tabber {
-    display: flex;
-    background-color: orange;
-    height: 65px;
+.tabbars {
+  display: flex;
+  background-color: orange;
+  height: 65px;
 }
-.tl {
-    padding: 1rem;
-}
-.tl h1 {
-    font-size: 36px;
-}
-.tr button {
-    font-size: 25px;
-}
-select {
-    margin: 1rem auto;
-    padding: 0.5rem;
-}
-.main {
-    width: 740px;
-    margin: 2rem auto;
-    height: 800px;
-    box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
-.img {
-    height: 100px;
-    background: orange;
-}
-.textbox {
-    padding: 1rem;
-    text-align: center;
-}
-.textbox label {
-    padding: 1rem;
-    font-size: 32px;
-}
-.dropbox {
-    text-align: center;
-    font-size: 26px;
-}
-.dropbox label {
-    padding-left: 1rem;
-}
-.checkbox {
-    text-align: center;
-    font-size: 26px;
-}
-.checkbox label {
-    padding-right: 1rem;
-}
-.checkbox input {
-    margin: 1rem auto;
-    padding: 0.5rem;
-}
-.description label {
-    font-size: 26px;
-    padding-left: 2.5rem;
-}
-.des {
-    text-align: center;
-}
-textarea {
-    width: 664px; 
-    height: 219px;
+.tabbar h1 {
+  font-size: 36px;
+  padding: 1rem;
 }
 a {
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
 }
-.inputimg {
-    padding-top: 1rem;
+.tabbarcolor {
+  background-color: orange;
+  height: 50px;
 }
-.inputimg input {
-
+.titel {
+  padding: 15px;
+  text-align: center;
+  font-size: 26px;
 }
-.button1 {
+.main {
+  width: 900px;
+  margin: 2rem auto;
+  height: 800px;
+  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.formt {
+  margin: 1rem auto;
+  font-size: 26px;
+  padding-left: 20px;
+}
+.names {
+    padding-bottom: 10px;
+    .names input {
+        font-size: 17px;
+    }
+}
+.names input {
+    font-size: 17px;
+    padding-right: 50px;
+}
+.locations {
+    padding-bottom: 10px;
+}
+.locations input {
+    font-size: 17px;
+    padding-right: 50px;
+}
+.dropbox {
+    padding-bottom: 10px;
+}
+.dropbox label {
+    padding-right: 5px;
+}
+.dropbox select {
+    margin-right: 10px;
+    padding-right: 50px;
+    font-size: 17px;
+}
+.checkboxs {
+    padding-bottom: 10px;
+}
+.checkboxs label {
+  padding-right: 2rem;
+}
+.description {
+    padding-bottom: 10px;
+}
+.uploadimgs {
+    padding-bottom: 10px;
+}
+.buttons {
     display: flex;
     justify-content: space-evenly;
     margin-top: 2.5rem;
 }
 button {
-    padding: 20px 50px;
-    font-size: 20px;
-}
-.confirm {
+    padding: 15px 25px;
+    font-size: 26px;
     background: orange;
-    border-radius: 30px;
-    transition: all 0.25s ease;
-}
-.cancel {
-    background:orange;
-    border-radius: 30px;
+    border-radius: 50px;
     transition: all 0.25s ease;
 }

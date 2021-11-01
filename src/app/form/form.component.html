@@ -1,62 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <div class="tabber">
-        <div class="tl">
-            <a routerLink=""><h1>INVETHK</h1></a>            
+<nav class="tabbars">
+    <div class="tabbar">
+        <a routerLink="">
+            <h1>INVETHK</h1>
+        </a>
+    </div>
+</nav>
+<div class="main">
+    <div class="tabbarcolor">
+        <div class="titel">
+            <h1>เพิ่มสถานที่ท่องเที่ยว</h1>
         </div>
     </div>
-
-    <div class="main">
-        <div class="img"></div>
-        <div class="textbox">
-            <label for="fname">ชื่อสถานที่ท่องเที่ยว</label>
-            <input type="text">
-        </div>
-        <div class="dropbox">
-            <label for="province">จังหวัด</label>
-            <select name="province" id="province">
-                <option value="province">กรุงเทพมหานคร</option>
-            </select>
-            <label for="district">อำเภอ</label>
-            <select name="district" id="district">
-                <option value="district">ท่าแร้ง</option>
-            </select>
-            <label for="district">ตำบล</label>
-            <select name="county" id="county">
-                <option value="county">บางเขน</option>
-            </select>
-        </div>
-        <div class="checkbox">
-            <input type="checkbox" id="bathroom" name="bathroom" >
-            <label for="bathroom"> ห้องน้ำ</label>
-            <input type="checkbox" id="bus" name="bus" >
-            <label for="bus"> รถรับ-ส่ง</label>
-            <input type="checkbox" id="restaurant" name="restaurant" >
-            <label for="restaurant"> ร้านอาหาร</label>
-            <input type="checkbox" id="hotel" name="hotel" >
-            <label for="hotel"> โรงแรม</label>
-        </div>
-        <div class="description">
-            <label for="description">รายละเอียด</label>
-            <div class="des"><textarea name="description" id="description"></textarea></div>
-            <div class="inputimg">
-                <label for="image">เพิ่มรูปภาพ :</label>
-                <input type="file" id="image"  name="name" multiple="multiple" accept="image/png, image/jpeg" > 
-            </div>   
-        </div>
-        <div class="button1">
-            <button class="confirm">confirm</button>
-            <button class="cancel">cancel</button>
-        </div>
+    <div class="formt">
+        <form action="">
+            <div class="form-group">
+                <div class="names">
+                    <label for="name">ชื่อสถานที่ :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="locations">
+                    <label>ที่อยู่ :</label>
+                    <input type="text" required>
+                </div>
+                <div class="dropbox">
+                    <label>ภาค :</label>
+                    <select name="region" id="region" required>
+                        <option value="region">- -</option>
+                        <option value="region">เหนือ</option>
+                        <option value="region">อีสาน</option>
+                        <option value="region">กลาง</option>
+                        <option value="region">ใต้</option>
+                    </select>
+                    <label>จังหวัด :</label>
+                    <select name="province" id="province" required>
+                        <option value="region">- -</option>
+                        <option value="province">กรุงเทพมหานคร</option>
+                    </select>
+                    <label>อำเภอ :</label>
+                    <select name="district" id="district" required>
+                        <option value="region">- -</option>
+                        <option value="district">ท่าแร้ง</option>
+                    </select>
+                    <label>ตำบล :</label>
+                    <select name="county" id="county" required>
+                        <option value="region">- -</option>
+                        <option value="county">บางเขน</option>
+                    </select>
+                </div>
+                <div class="checkboxs">
+                    <input type="checkbox" id="bathroom" name="bathroom">
+                    <label for="bathroom"> ห้องน้ำ</label>
+                    <input type="checkbox" id="bus" name="bus">
+                    <label for="bus"> รถรับ-ส่ง</label>
+                    <input type="checkbox" id="restaurant" name="restaurant">
+                    <label for="restaurant"> ร้านอาหาร</label>
+                    <input type="checkbox" id="hotel" name="hotel">
+                    <label for="hotel"> โรงแรม</label>
+                </div>
+                <div class="description">
+                    <label>รายละเอียด</label>
+                    <div class="des">
+                        <textarea id="description" cols="100px" rows="10" required></textarea>
+                    </div>
+                </div>
+                <div class="uploadimgs">
+                    <label>เพิ่มรูปภาพ :</label>
+                    <input type="file" multiple accept="image/*" required>
+                </div>
+                <div class="buttons">
+                    <button type="submit" (click)="save()">confirm</button>
+                    <button type="reset">cancel</button>
+                </div>
+            </div>
+        </form>
     </div>
-</body>
-</html>
+</div>
