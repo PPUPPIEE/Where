@@ -9,36 +9,37 @@ img {
   align-self: flex-end;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: relative;
   transform: translate(-50%, -50%);
   border: 5px solid orange;
   border-radius: 10px;
   padding: 10px;
-  width: 40%;
   left : 50%;
   background-color: lightgray;
-  min-width: 200px;
+  min-width: 300px;
+  width: 50vh;
 }
 .searchTerm {
   border: 1px solid gray;
   padding: 10px;
   border-radius: 10px;
+  width:100%;
 }
 
-button {
-  background-color: orange;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 15px 15px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 100px;
+// button {
+//   background-color: orange;
+//   border: none;
+//   border-radius: 10px;
+//   color: white;
+//   padding: 15px 15px;
+//   text-align: center;
+//   text-decoration: none;
+//   font-size: 16px;
+//   margin: 4px 2px;
+//   cursor: pointer;
+//   width: 100px;
 
-}
+// }
 
 @media  (max-width: 650px) {
   button{
