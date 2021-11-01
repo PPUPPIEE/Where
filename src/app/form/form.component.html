@@ -41,31 +41,39 @@
                         <option value="region">- -</option>
                         <option value="district">ท่าแร้ง</option>
                     </select>
-                    <label>ตำบล :</label>
+                    <!-- <label>ตำบล :</label>
                     <select name="county" id="county" required>
                         <option value="region">- -</option>
                         <option value="county">บางเขน</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="checkboxs">
                     <input type="checkbox" id="bathroom" name="bathroom">
                     <label for="bathroom"> ห้องน้ำ</label>
                     <input type="checkbox" id="bus" name="bus">
-                    <label for="bus"> รถรับ-ส่ง</label>
-                    <input type="checkbox" id="restaurant" name="restaurant">
+                    <label for="bus"> ที่จอดรถ </label>
+                    <!-- <input type="checkbox" id="restaurant" name="restaurant">
                     <label for="restaurant"> ร้านอาหาร</label>
                     <input type="checkbox" id="hotel" name="hotel">
-                    <label for="hotel"> โรงแรม</label>
+                    <label for="hotel"> โรงแรม</label> -->
                 </div>
                 <div class="description">
                     <label>รายละเอียด</label>
                     <div class="des">
-                        <textarea id="description" cols="100px" rows="10" required></textarea>
+                        <textarea id="description" cols="100px" rows="10px" ></textarea>
                     </div>
                 </div>
                 <div class="uploadimgs">
                     <label>เพิ่มรูปภาพ :</label>
-                    <input type="file" multiple accept="image/*" required>
+                    <input type="file" multiple  accept="image/png, image/jpeg" required>
+                </div>
+                <div class="xxxx">
+                    <label>ติดต่อ :</label>
+                    <input type="text" >
+                </div>
+                <div class="xxxxx">
+                    <label>ความปลอดภัย :</label>
+                    <input type="text" >
                 </div>
                 <div class="buttons">
                     <button type="submit" (click)="save()">confirm</button>
