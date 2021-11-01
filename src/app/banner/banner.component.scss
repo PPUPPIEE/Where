@@ -41,6 +41,11 @@ img {
 
 // }
 
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
 @media  (max-width: 650px) {
   button{
     display:block;
