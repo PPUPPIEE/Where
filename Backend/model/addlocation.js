@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const AddlocationSchema = new mongoose.Schema({
     name: { type: String },
     sector: { type: String },
-    provinece: { type: String },
+    province: { type: String },
     district: { type: String },
     type: { type: String },
     imageurl: { type: String },
