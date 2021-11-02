@@ -178,7 +178,7 @@ router.post("/", async (req, res) => {
   ) {
     try {
       const searchResult = await location.aggregate([
-        { $match: { sector: req.body.sector, type: req.body.type } },
+        { $match: { sector: req.body.sector, province: req.body.province, type: req.body.type } },
       ]);
       res.status(200).json(searchResult);
     } catch (err) {
@@ -195,7 +195,7 @@ router.post("/", async (req, res) => {
   ) {
     try {
       const searchResult = await location.aggregate([
-        { $match: { province: req.body.sector } },
+        { $match: { province: req.body.province } },
       ]);
       res.status(200).json(searchResult);
     } catch (err) {
