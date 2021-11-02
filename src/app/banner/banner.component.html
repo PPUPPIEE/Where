@@ -26,8 +26,8 @@
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-outline-primary" id="dropdownBasic1 " ngbDropdownToggle>{{province}}</button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem *ngFor="let item of provinceList" (click)="changeProvince(item.name)">
-            {{item.name}}
+          <button ngbDropdownItem *ngFor="let item of newProvinceList; let index=index" (click)="changeProvince(newProvinceList[index])">
+            {{newProvinceList[index]}}
           </button>
         </div>
       </div>
