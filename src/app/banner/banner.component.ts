@@ -22,11 +22,11 @@ export class BannerComponent implements OnInit {
 
   changeProvince(value: string) {
     this.province = value;
-    this.provinceList.forEach(item => {
-      if (item.name == this.province) {
-        this.sectorName = item.sector;
-      }
-    });
+    // this.provinceList.forEach(item => {
+    //   if (item.name == this.province) {
+    //     this.sectorName = item.sector;
+    //   }
+    // });
 
 
   }
