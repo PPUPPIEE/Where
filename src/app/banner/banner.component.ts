@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ShareService } from '../services/share.service';
 import { getProvince } from './province';
 
 
@@ -10,17 +11,25 @@ import { getProvince } from './province';
 })
 export class BannerComponent implements OnInit {
 
-  provinceList: getProvince[] =[];
+  provinceList: getProvince[] = [];
   newProvinceList: string[] = [];
-  sector: string[] = ["เหนือ", "ตะวันออกเฉียงเหนือ", "กลาง", "ใต้", "ตะวันออก", "ตะวันตก"];
   province: string = 'จังหวัด';
+  sector: string[] = ["เหนือ", "ตะวันออกเฉียงเหนือ", "กลาง", "ใต้", "ตะวันออก", "ตะวันตก"];
   sectorName: string = 'ภาค';
+  typeList: string[] = ["ร้านอาหาร", "วัฒนธรรม", "สถานบันเทิงอารมณ์"];
+  type = "ประเภท";
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    public share: ShareService) { }
 
   ngOnInit(): void {
+    this.getProvince();
+  }
+
+  getProvince() {
     this.http.get<getProvince[]>('https://dry-dawn-24095.herokuapp.com/api/province').subscribe(
-      response =>{ this.provinceList = response}
+      response => { this.provinceList = response }
     )
   }
 
@@ -37,14 +46,18 @@ export class BannerComponent implements OnInit {
   changeSector(value: string) {
     this.sectorName = value;
     this.province = 'จังหวัด';
-    this.newProvinceList =[];
+    this.newProvinceList = [];
     this.provinceList.forEach(item => {
       if (item.sector === this.sectorName)
         this.newProvinceList.push(item.name)
     });
   }
 
-  addProvince(){
+  changeType(value: string){
+    this.type = value;
+  }
+
+  addProvince() {
     if (this.sectorName == "ภาค") {
       this.provinceList.forEach(item => {
         this.newProvinceList.push(item.name)
@@ -52,13 +65,24 @@ export class BannerComponent implements OnInit {
     }
   }
 
-  postSearch(){
-    this.http.post('https://dry-dawn-24095.herokuapp.com/api/search',{
-      "name":"",
-      "sector" : "",
-      "province" : "",
-      "type" : ""
-  }).subscribe(Response => console.log(Response))
+  postSearch(value:string) {
+    //   this.http.post('https://dry-dawn-24095.herokuapp.com/api/search',{
+    //     "name":value,
+    //     "sector" : "",
+    //     "province" : "",
+    //     "type" : ""
+    // }).subscribe(Response => console.log(Response))
+    if(this.type === "ประเภท"){this.type =""};
+    if(this.sectorName === "ภาค"){this.sectorName =""};
+    if(this.province === "จังหวัด"){this.province =""};
+
+    this.share.searchName = value;
+    this.share.searchSector = this.sectorName;
+    this.share.searchProvince = this.province;
+    this.share.searchType = this.type;
+
+    console.log(this.type , this.sectorName, this.province);
+
   }
 
 }
