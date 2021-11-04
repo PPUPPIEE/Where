@@ -53,7 +53,7 @@ export class BannerComponent implements OnInit {
     });
   }
 
-  changeType(value: string){
+  changeType(value: string) {
     this.type = value;
   }
 
@@ -65,23 +65,23 @@ export class BannerComponent implements OnInit {
     }
   }
 
-  postSearch(value:string) {
+  postSearch(value: string) {
     //   this.http.post('https://dry-dawn-24095.herokuapp.com/api/search',{
     //     "name":value,
     //     "sector" : "",
     //     "province" : "",
     //     "type" : ""
     // }).subscribe(Response => console.log(Response))
-    if(this.type === "ประเภท"){this.type =""};
-    if(this.sectorName === "ภาค"){this.sectorName =""};
-    if(this.province === "จังหวัด"){this.province =""};
+    if (this.type === "ประเภท") { this.type = "" };
+    if (this.sectorName === "ภาค") { this.sectorName = "" };
+    if (this.province === "จังหวัด") { this.province = "" };
 
     this.share.searchName = value;
     this.share.searchSector = this.sectorName;
     this.share.searchProvince = this.province;
     this.share.searchType = this.type;
 
-    console.log(this.type , this.sectorName, this.province);
+    console.log(this.type, this.sectorName, this.province);
 
   }
 
