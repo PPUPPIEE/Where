@@ -9,6 +9,8 @@ export class ShareService {
   searchSector ="";
   searchProvince ="";
   searchType ="";
-
+  
+  // api
+  apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
   constructor() { }
 }

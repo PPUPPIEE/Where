@@ -15,41 +15,58 @@
   <!-- <app-navbar></app-navbar> -->
 
   <div class="grid">
-    <div class="page-leftbar content">
-      <form>
-        <header>ZZZZ</header>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-        <label for="vehicle1"> I have a bike</label><br>
-        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-        <label for="vehicle3"> I have a boat</label><br><br>
+    <div class="page-header content">
 
-        <header>ZZZZ</header>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-        <label for="vehicle1"> I have a bike</label><br>
-        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-        <label for="vehicle2"> I have a car</label><br>
-        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-        <label for="vehicle3"> I have a boat</label>
-      </form>
     </div>
-    <div class="page-main content" >
 
-<!-- Card -->
+    <div class="page-leftbar content">
+      
+      <div class="Boxofradio">
+        <div>ระยะเวลาทำการ</div>
+        <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">ไม่จำกัดระยะเวลาทำการ</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">จำกัดระยะเวลาทำการ</label>
+      </div>
+      <div>สิ่งอำนวยความสะดวก</div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio3">ห้องน้ำ</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio4">บริการรถนำเที่ยว</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio5">ร้านอาหาร</label>
+      </div>
+      </div>
+
+
+    </div>
+
+    <div class="page-main content">
+
+      <!-- Card -->
       <div class="maincontent" *ngFor="let item of cardInfo">
-        <img src={{item.img}}>  
-        <div class="container" >
+        <img src={{item.imageurl}}>
+        <div class="container">
           <div class="detail">
-            <div class="name" >
-              <h1 >{{item.name}}<span>{{item.Type}}</span></h1>
-              <h3 >{{item.Time}}</h3>
+            <div class="name">
+              <h1>{{item.name}}<span>{{item.type}}</span></h1>
+              <h3>{{item.opentime}}-{{item.closetime}}</h3>
             </div>
-            <h4 class="info">{{item.Info}}</h4>
+            <h4 class="info">{{item.district}}</h4>
           </div>
-          <button class="detailbtn" (click)="pushDetail(item.name,item.img, item.Time)">รายละเอียด</button>
+          <button class="detailbtn" (click)="pushDetail(item.name,item.imageurl, item.opentime)">รายละเอียด</button>
         </div>
       </div>
-<!--  -->
-      
+      <!--  -->
+
 
     </div>
 
