@@ -13,6 +13,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { BannerComponent } from './banner/banner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlideshowComponent } from './slideshow/slideshow.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -27,11 +28,13 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
     BannerComponent,
     SlideshowComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

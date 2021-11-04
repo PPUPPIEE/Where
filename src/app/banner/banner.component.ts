@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import data from 'src/assets/json/province.json';
+import { getProvince } from './province';
+
 
 @Component({
   selector: 'app-banner',
@@ -8,16 +10,18 @@ import data from 'src/assets/json/province.json';
 })
 export class BannerComponent implements OnInit {
 
-  provinceList: { name: string, sector: string }[] = data;
+  provinceList: getProvince[] =[];
   newProvinceList: string[] = [];
   sector: string[] = ["เหนือ", "ตะวันออกเฉียงเหนือ", "กลาง", "ใต้", "ตะวันออก", "ตะวันตก"];
   province: string = 'จังหวัด';
   sectorName: string = 'ภาค';
-  ngGet: string = 'true';
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<getProvince[]>('https://dry-dawn-24095.herokuapp.com/api/province').subscribe(
+      response =>{ this.provinceList = response}
+    )
   }
 
   changeProvince(value: string) {
@@ -46,6 +50,15 @@ export class BannerComponent implements OnInit {
         this.newProvinceList.push(item.name)
       });
     }
+  }
+
+  postSearch(){
+    this.http.post('https://dry-dawn-24095.herokuapp.com/api/search',{
+      "name":"",
+      "sector" : "",
+      "province" : "",
+      "type" : ""
+  }).subscribe(Response => console.log(Response))
   }
 
 }
