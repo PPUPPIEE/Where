@@ -12,6 +12,9 @@ import { DetailComponent } from './detail/detail.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { BannerComponent } from './banner/banner.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { BannerComponent } from './banner/banner.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // HttpClientModule,
+    // FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

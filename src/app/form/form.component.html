@@ -1,85 +1,110 @@
-<nav class="tabbars">
-    <div class="tabbar">
-        <a routerLink="">
-            <h1>INVETHK</h1>
-        </a>
-    </div>
-</nav>
-<div class="main">
-    <div class="tabbarcolor">
-        <div class="titel">
-            <h1>เพิ่มสถานที่ท่องเที่ยว</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <a routerLink='/' routerLinkActive="active">INVETHK</a>
         </div>
-    </div>
-    <div class="formt">
-        <form action="">
-            <div class="form-group">
-                <div class="names">
-                    <label for="name">ชื่อสถานที่ :</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="locations">
-                    <label>ที่อยู่ :</label>
-                    <input type="text" required>
-                </div>
-                <div class="dropbox">
+    </nav>
+    <div class="grid">
+        <div class="titlename">
+            <div class="titel">
+                <h1>เพิ่มสถานที่ท่องเที่ยว</h1>
+            </div>
+        </div>
+        <form action="https://httpbin.org/post" method="post">
+            <div class="form">
+                <label for="names">ชื่อสถานที่ :</label>
+                <input type="text" id="names" name="name" placeholder="ชื่อสถานที่">
+            </div>
+            <div class="form">
+                <label for="location">ที่อยู่ :</label>
+                <input type="text" id="location" name="location" placeholder="ที่อยู่">
+            </div>
+            <div class="form">
+                <label>ประเภท :</label>
+                <select name="typrs" required>
+                    <option selected>ประเภท</option>
+                    <option value="ศูนย์การค้า">ศูนย์การค้า</option>
+                    <option value="วัฒนธรรม">วัฒนธรรม</option>
+                    <option value="แหล่งท่องเที่ยวตามธรรมชาติ">แหล่งท่องเที่ยวตามธรรมชาติ</option>
+                </select>
+            </div>
+            <div class="Locationform">
+                <div class="Locations">
                     <label>ภาค :</label>
                     <select name="region" id="region" required>
-                        <option value="region">- -</option>
-                        <option value="region">เหนือ</option>
-                        <option value="region">อีสาน</option>
-                        <option value="region">กลาง</option>
-                        <option value="region">ใต้</option>
+                        <option selected>ภาค</option>
+                        <option value="เหนือ">เหนือ</option>
+                        <option value="อีสาน">อีสาน</option>
+                        <option value="กลาง">กลาง</option>
+                        <option value="ใต้">ใต้</option>
                     </select>
+                </div>
+                <div class="Locations">
                     <label>จังหวัด :</label>
                     <select name="province" id="province" required>
-                        <option value="region">- -</option>
-                        <option value="province">กรุงเทพมหานคร</option>
+                        <option selected>จังหวัด</option>
+                        <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
                     </select>
+                </div>
+                <div class="Locations">
                     <label>อำเภอ :</label>
                     <select name="district" id="district" required>
-                        <option value="region">- -</option>
-                        <option value="district">ท่าแร้ง</option>
+                        <option selected>อำเภอ</option>
+                        <option value="ท่าแร้ง">ท่าแร้ง</option>
                     </select>
-                    <!-- <label>ตำบล :</label>
-                    <select name="county" id="county" required>
-                        <option value="region">- -</option>
-                        <option value="county">บางเขน</option>
-                    </select> -->
                 </div>
-                <div class="checkboxs">
-                    <input type="checkbox" id="bathroom" name="bathroom">
-                    <label for="bathroom"> ห้องน้ำ</label>
-                    <input type="checkbox" id="bus" name="bus">
-                    <label for="bus"> ที่จอดรถ </label>
-                    <!-- <input type="checkbox" id="restaurant" name="restaurant">
-                    <label for="restaurant"> ร้านอาหาร</label>
-                    <input type="checkbox" id="hotel" name="hotel">
-                    <label for="hotel"> โรงแรม</label> -->
+            </div>
+            <div class="form">
+                <input type="checkbox" id="bathroom" name="bathroom" value="bathroom">
+                <label for="bathroom"> ห้องน้ำ</label>
+                <input type="checkbox" id="bus" name="bus" value="bus">
+                <label for="bus"> ที่จอดรถ </label>
+            </div>
+            <div class="Timeform">
+                <div class="md-form">
+                    <label>เวลาเปิด :</label>
+                    <input type="time" name="openTime" class="form-control" value="08:00" mdbInput />
                 </div>
-                <div class="description">
-                    <label>รายละเอียด</label>
-                    <div class="des">
-                        <textarea id="description" cols="100px" rows="10px" ></textarea>
-                    </div>
+                <div class="md-form">
+                    <label>เวลาปิด :</label>
+                    <input type="time" name="closeTime" class="form-control" value="22:00" mdbInput />
                 </div>
-                <div class="uploadimgs">
-                    <label>เพิ่มรูปภาพ :</label>
-                    <input type="file" multiple  accept="image/png, image/jpeg" required>
+            </div>
+            <div class="form">
+                <label>รายละเอียด</label>
+                <div class="des">
+                    <textarea id="description" name="description" cols="100px" rows="10px"></textarea>
                 </div>
-                <div class="xxxx">
-                    <label>ติดต่อ :</label>
-                    <input type="text" >
-                </div>
-                <div class="xxxxx">
-                    <label>ความปลอดภัย :</label>
-                    <input type="text" >
-                </div>
-                <div class="buttons">
-                    <button type="submit" (click)="save()">confirm</button>
-                    <button type="reset">cancel</button>
-                </div>
+            </div>
+            <div class="imgsform">
+                <label>เพิ่มรูปภาพ :</label>
+                <input class="uploadimgs" type="file" name="uploadimgs" multiple accept="image/png, image/jpeg"
+                    required>
+            </div>
+            <div class="form">
+                <label>ติดต่อ :</label>
+                <input type="textnumber" name="contact" placeholder="เบอร์โทร">
+            </div>
+            <div class="form">
+                <label>ความปลอดภัย :</label>
+                <input type="text" name="security" placeholder="ระบุโรงบาลที่อยู่ใกล้ที่สุด พร้อมระยะทาง">
+            </div>
+            <div class="buttonform">
+                <button type="submit">confirm</button>
+                <button type="reset">cancel</button>
             </div>
         </form>
     </div>
-</div>
+</body>
+
+</html>

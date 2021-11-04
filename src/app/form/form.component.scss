@@ -1,94 +1,108 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 100%;
-}
-.tabbars {
-  display: flex;
-  background-color: orange;
-  height: 65px;
-}
-.tabbar h1 {
-  font-size: 36px;
-  padding: 1rem;
-}
-a {
-  cursor: pointer;
-  color: black;
-  text-decoration: none;
-}
-.tabbarcolor {
-  background-color: orange;
-  height: 50px;
-}
-.titel {
-  padding: 15px;
-  text-align: center;
-  font-size: 26px;
-}
-.main {
-  width: 100pc;
-  margin: 2rem auto;
-  height: 800px;
-  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.formt {
-  margin: 1rem auto;
-  font-size: 26px;
-  padding-left: 20px;
-}
-.names {
-    padding-bottom: 10px;
-    .names input {
-        font-size: 17px;
+nav {
+  background-color: wheat;
+  top: 0;
+  width: 100%;
+  align-items: center;
+
+  .nav-left {
+    display: inline-block;
+    text-align: left;
+    padding: 15px;
+
+    a {
+      padding: 10px;
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        color: orange;
+      }
     }
+  }
 }
-.names input {
-    font-size: 17px;
-    padding-right: 50px;
-}
-.locations {
-    padding-bottom: 10px;
-}
-.locations input {
-    font-size: 17px;
-    padding-right: 50px;
-}
-.dropbox {
-    padding-bottom: 10px;
-}
-.dropbox label {
-    padding-right: 5px;
-}
-.dropbox select {
-    margin-right: 10px;
-    padding-right: 50px;
-    font-size: 17px;
-}
-.checkboxs {
-    padding-bottom: 10px;
-}
-.checkboxs label {
-  padding-right: 2rem;
-}
-.description {
-    padding-bottom: 10px;
-}
-.uploadimgs {
-    padding-bottom: 10px;
-}
-.buttons {
+
+.grid {
+  display: grid;
+  align-self: flex-end;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 10px;
+  width: 40%;
+  left: 50%;
+  top: 50%;
+  min-width: 200px;
+  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.5);
+  .titlename {
+    background-color: wheat;
+    height: 50px;
+    border-radius: 10px;
+  }
+  .titel {
+    padding: 15px;
+    text-align: center;
+    font-size: 26px;
+  }
+  .form {
+    font-size: 26px;
+    margin: 1rem;
+    input {
+      border: 1px solid gray;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    select {
+      border: 1px solid gray;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+  .Locationform{
+    display: flex;
+    font-size: 26px;
+    margin: 1rem;
+    .Locations{
+      margin-right: 1rem;
+    }
+    select {
+      margin-left: 1rem;
+      border: 1px solid gray;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+  .Timeform {
+    display: flex;
+    font-size: 26px;
+    margin: 1rem;
+    .md-form {
+      margin-right: 1rem;
+      input {
+        margin-left: 1rem;
+        border: 1px solid gray;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+  .imgsform {
+    font-size: 26px;
+    margin: 1rem;
+    input {
+      margin-left: 1rem;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+  .buttonform {
     display: flex;
     justify-content: space-evenly;
     margin-top: 2.5rem;
-}
-button {
-    padding: 15px 25px;
-    font-size: 26px;
-    background: orange;
-    border-radius: 50px;
-    transition: all 0.25s ease;
+    button {
+      padding: 10px 20px;
+      font-size: 26px;
+      background: wheat;
+      border-radius: 50px;
+    }
+  }
 }
