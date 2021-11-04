@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ShareService } from '../services/share.service';
+import { ShareService } from 'src/app/services/share.service';
+
 import { getProvince } from './province';
 
 

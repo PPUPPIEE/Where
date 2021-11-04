@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { ShareService } from './services/share.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { FormComponent } from './form/form.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SearchComponent } from './search/search.component';
-import { FooterComponent } from './footer/footer.component';
-import { DetailComponent } from './detail/detail.component';
-import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
-import { BannerComponent } from './banner/banner.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SlideshowComponent } from './slideshow/slideshow.component';
+import { HomeComponent } from './components/home/home.component';
+import { FormComponent } from './components/form/form.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchComponent } from './components/search/search.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DetailComponent } from './components/detail/detail.component';
+import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { SlideshowComponent } from './components/slideshow/slideshow.component';
 
 
 
