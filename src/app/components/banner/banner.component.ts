@@ -29,21 +29,15 @@ export class BannerComponent implements OnInit {
   }
 
   getProvince() {
-    this.http.get<getProvince[]>('https://dry-dawn-24095.herokuapp.com/api/province').subscribe(
+    this.http.get<getProvince[]>(this.share.apiGetProvince).subscribe(
       response => { this.provinceList = response }
     )
   }
 
   changeProvince(value: string) {
     this.province = value;
-    // this.provinceList.forEach(item => {
-    //   if (item.name == this.province) {
-    //     this.sectorName = item.sector;
-    //   }
-    // });
-
-
   }
+
   changeSector(value: string) {
     this.sectorName = value;
     this.province = 'จังหวัด';
@@ -54,7 +48,7 @@ export class BannerComponent implements OnInit {
     });
   }
 
-  changeType(value: string){
+  changeType(value: string) {
     this.type = value;
   }
 
@@ -66,23 +60,18 @@ export class BannerComponent implements OnInit {
     }
   }
 
-  postSearch(value:string) {
-    //   this.http.post('https://dry-dawn-24095.herokuapp.com/api/search',{
-    //     "name":value,
-    //     "sector" : "",
-    //     "province" : "",
-    //     "type" : ""
-    // }).subscribe(Response => console.log(Response))
-    if(this.type === "ประเภท"){this.type =""};
-    if(this.sectorName === "ภาค"){this.sectorName =""};
-    if(this.province === "จังหวัด"){this.province =""};
+  postSearch(value: string) {
+
+    if (this.type === "ประเภท") { this.type = "" };
+    if (this.sectorName === "ภาค") { this.sectorName = "" };
+    if (this.province === "จังหวัด") { this.province = "" };
 
     this.share.searchName = value;
     this.share.searchSector = this.sectorName;
     this.share.searchProvince = this.province;
     this.share.searchType = this.type;
 
-    console.log(this.type , this.sectorName, this.province);
+    console.log(this.type, this.sectorName, this.province);
 
   }
 
