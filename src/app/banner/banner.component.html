@@ -1,7 +1,39 @@
-<div class="container">
-  <img src="assets/img/1.The-Grand-Palace-1.jpg" alt="Girl in a jacket">
-  <div class="search-box ">
-    <input type="text" class="searchTerm" placeholder="ใส่สิ่งที่คุณอยากรู้ที่นี่สิ">
-    <button>ค้นหา</button>
+<img src="assets/img/1.The-Grand-Palace-1.jpg">
+<div class="search-box ">
+  <input type="text" class="searchTerm" placeholder="ใส่สิ่งที่คุณอยากรู้ที่นี่สิ">
+  <div class="row">
+    <div class="col p-1">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>ประเภท</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>ร้านอาหาร</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col p-1">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{sectorName}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
+            {{sector[index]}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col p-1">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1 " ngbDropdownToggle (click)="addProvince()">{{province}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem *ngFor="let item of newProvinceList; let index=index" (click)="changeProvince(newProvinceList[index])">
+            {{newProvinceList[index]}}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <button type="button" class="btn btn-warning" (click)="postSearch()">ค้นหา</button>
+
 </div>
