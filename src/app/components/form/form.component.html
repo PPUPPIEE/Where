@@ -20,8 +20,8 @@
                         <button class="form-control" type="button" id="dropdownBasic1"
                             ngbDropdownToggle>{{type}}</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="form-control" ngbDropdownItem type="button" *ngFor="let item of typeList; let index=index"
-                                (click)="changeType(typeList[index])">
+                            <button class="form-control" ngbDropdownItem type="button"
+                                *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
                                 {{typeList[index]}}
                             </button>
                         </div>
@@ -31,8 +31,8 @@
                         <button class="form-control" type="button" name="region" id="dropdownBasic1"
                             ngbDropdownToggle>{{sectorName}}</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="form-control" ngbDropdownItem type="button" *ngFor="let item of sector; let index=index"
-                                (click)="changeSector(sector[index])">
+                            <button class="form-control" ngbDropdownItem type="button"
+                                *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
                                 {{sector[index]}}
                             </button>
                         </div>
@@ -42,7 +42,8 @@
                         <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
                             (click)="addProvince()" value="{{province}}">{{province}}</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="form-control" ngbDropdownItem type="button" *ngFor="let item of newProvinceList; let index=index"
+                            <button class="form-control" ngbDropdownItem type="button"
+                                *ngFor="let item of newProvinceList; let index=index"
                                 (click)="changeProvince(newProvinceList[index])">
                                 {{newProvinceList[index]}}
                             </button>
