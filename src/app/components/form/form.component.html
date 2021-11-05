@@ -16,23 +16,38 @@
                 </div>
                 <div class="Locationform">
                     <label>ประเภท :</label>
-                    <select name="type" class="form-control" required>
-                        <option selected>ประเภท</option>
-                        <option value="ศูนย์การค้า">ศูนย์การค้า</option>
-                        <option value="วัฒนธรรม">วัฒนธรรม</option>
-                        <option value="แหล่งท่องเที่ยวตามธรรมชาติ">แหล่งท่องเที่ยวตามธรรมชาติ</option>
-                    </select>
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="form-control" type="button" id="dropdownBasic1"
+                            ngbDropdownToggle>{{type}}</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button class="form-control" ngbDropdownItem type="button" *ngFor="let item of typeList; let index=index"
+                                (click)="changeType(typeList[index])">
+                                {{typeList[index]}}
+                            </button>
+                        </div>
+                    </div>
                     <label class="region">ภาค :</label>
-                    <select name="region" class="form-control" required>
-                        <option value="region">เหนือ</option>
-                        <option value="region">อีสาน</option>
-                        <option value="region">กลาง</option>
-                        <option value="region">ใต้</option>
-                    </select>
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="form-control" type="button" name="region" id="dropdownBasic1"
+                            ngbDropdownToggle>{{sectorName}}</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button class="form-control" ngbDropdownItem type="button" *ngFor="let item of sector; let index=index"
+                                (click)="changeSector(sector[index])">
+                                {{sector[index]}}
+                            </button>
+                        </div>
+                    </div>
                     <label class="province">จังหวัด :</label>
-                    <select name="province" class="form-control" required>
-                        <option value="province">กรุงเทพมหานคร</option>
-                    </select>
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
+                            (click)="addProvince()" value="{{province}}">{{province}}</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button class="form-control" ngbDropdownItem type="button" *ngFor="let item of newProvinceList; let index=index"
+                                (click)="changeProvince(newProvinceList[index])">
+                                {{newProvinceList[index]}}
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="checkform">
                     <input type="checkbox" class="form-control" id="bathroom" name="bathroom" value="bathroom">
