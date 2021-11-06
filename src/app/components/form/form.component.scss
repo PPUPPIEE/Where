@@ -66,15 +66,21 @@ nav {
       width: 100px;
     }
     .region{
+      margin-left: 1rem;
       margin-right:0px;
       width: 65px;
     }
-    .province{
+    .provinceform{
+      margin-left: 1rem;
       margin-right:0px;
       width: 90px;
     }
     button{
       margin-right: 1rem;
+    }
+    input{
+      display: none;
+      visibility: none;
     }
   }
   .checkform {

@@ -5,7 +5,7 @@
     </div>
     <div class="row justify-content center mt-2">
         <div class="col-md-12">
-            <form action="https://httpbin.org/post" method="post">
+            <form action="https://dry-dawn-24095.herokuapp.com/api/addlocation" method="post">
                 <div class="form">
                     <label for="names">ชื่อสถานที่ :</label>
                     <input type="text" class="form-control" id="names" name="name" placeholder="ชื่อสถานที่">
@@ -17,30 +17,32 @@
                 <div class="Locationform">
                     <label>ประเภท :</label>
                     <div ngbDropdown class="d-inline-block">
-                        <button class="form-control" type="button" id="dropdownBasic1"
-                            ngbDropdownToggle>{{type}}</button>
+                        <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
+                            name="type">{{type}}</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                             <button class="form-control" ngbDropdownItem type="button"
                                 *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
                                 {{typeList[index]}}
                             </button>
                         </div>
+                        <input type="text" class="form-control" name="type" value="{{type}}">
                     </div>
                     <label class="region">ภาค :</label>
                     <div ngbDropdown class="d-inline-block">
-                        <button class="form-control" type="button" name="region" id="dropdownBasic1"
-                            ngbDropdownToggle>{{sectorName}}</button>
+                        <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
+                            name="sector">{{sectorName}}</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                             <button class="form-control" ngbDropdownItem type="button"
                                 *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
                                 {{sector[index]}}
                             </button>
                         </div>
+                        <input type="text" class="form-control" name="sector" value="{{sectorName}}">
                     </div>
-                    <label class="province">จังหวัด :</label>
+                    <label class="provinceform">จังหวัด :</label>
                     <div ngbDropdown class="d-inline-block">
-                        <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
-                            (click)="addProvince()" value="{{province}}">{{province}}</button>
+                        <button class="form-control" type="button" id="dropdownBasic1 " ngbDropdownToggle
+                            (click)="addProvince()" name="province">{{province}}</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                             <button class="form-control" ngbDropdownItem type="button"
                                 *ngFor="let item of newProvinceList; let index=index"
@@ -48,36 +50,37 @@
                                 {{newProvinceList[index]}}
                             </button>
                         </div>
+                        <input type="text" class="form-control" name="province" value="{{province}}">
                     </div>
                 </div>
                 <div class="checkform">
-                    <input type="checkbox" class="form-control" id="bathroom" name="bathroom" value="bathroom">
+                    <input type="checkbox" class="form-control" id="bathroom" name="toilet" value="true">
                     <label for="bathroom"> ห้องน้ำ</label>
-                    <input type="checkbox" class="form-control" id="bus" name="bus" value="bus">
+                    <input type="checkbox" class="form-control" id="bus" name="parking" value="true">
                     <label for="bus"> ที่จอดรถ </label>
                 </div>
                 <div class="Timeform">
                     <div class="md-form">
                         <label>เวลาเปิด :</label>
-                        <input type="time" name="openTime" class="form-control" value="08:00" mdbInput />
+                        <input type="time" name="opentime" class="form-control" value="08:00" mdbInput />
                     </div>
                     <div class="md-form">
                         <label>เวลาปิด :</label>
-                        <input type="time" name="closeTime" class="form-control" value="22:00" mdbInput />
+                        <input type="time" name="closetime" class="form-control" value="22:00" mdbInput />
                     </div>
                 </div>
                 <div class="descriptionform">
                     <label>รายละเอียด</label>
                     <div class="des">
-                        <textarea id="description" class="form-control" name="description" cols="51px"
+                        <textarea id="description" class="form-control" name="detail" cols="51px"
                             rows="10px"></textarea>
                     </div>
                 </div>
-                <div class="imgsform">
+                <!-- <div class="imgsform">
                     <label>เพิ่มรูปภาพ :</label>
-                    <input class="uploadimgs" type="file" name="uploadimgs" multiple accept="image/png, image/jpeg"
+                    <input class="uploadimgs" type="file" name="imageurl" multiple accept="image/png, image/jpeg"
                         required>
-                </div>
+                </div> -->
                 <div class="phonenumberform">
                     <label>ติดต่อ :</label>
                     <input type="number" class="form-control" name="contact" placeholder="เบอร์โทร">
