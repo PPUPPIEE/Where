@@ -27,7 +27,7 @@ nav {
   height: 75rem;
   margin-bottom: 80px;
   padding-bottom: 15px;
-  height: 1080px;
+  height: 900px;
   padding-top: 15px;
   box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
   border-radius: 10px;
@@ -163,6 +163,7 @@ nav {
       background: wheat;
       border-radius: 50px;
       transition: all 0.25s ease;
+      width: 10pc;
     }
   }
 }
