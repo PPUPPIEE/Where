@@ -3,7 +3,7 @@
   <input type="text" class="searchTerm" placeholder="ใส่สิ่งที่คุณอยากรู้ที่นี่สิ" #input>
   <div class="row">
     <div class="col p-1">
-      <div ngbDropdown class="d-inline-block">
+      <div ngbDropdown class="d-inline-block ">
         <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{type}}</button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
