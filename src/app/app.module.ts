@@ -15,6 +15,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { SeachbarComponent } from './components/seachbar/seachbar.component';
 
 
 
@@ -30,6 +31,7 @@ import { SlideshowComponent } from './components/slideshow/slideshow.component';
     NotFoundComponentComponent,
     BannerComponent,
     SlideshowComponent,
+    SeachbarComponent,
     
     
   ],
