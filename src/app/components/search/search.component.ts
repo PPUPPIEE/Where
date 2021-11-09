@@ -30,6 +30,19 @@ export class SearchComponent implements OnInit {
         {
           this.cardInfo = res
         })
+
+
+        if( window.localStorage )
+        {
+          if( !localStorage.getItem('firstLoad') )
+          {
+            localStorage['firstLoad'] = true;
+            window.location.reload();
+          }  
+          else
+            localStorage.removeItem('firstLoad');
+        }
+        
   }
 
 
@@ -44,6 +57,7 @@ export class SearchComponent implements OnInit {
     console.log(this.cardName);
     console.log(this.cardImage);
     console.log(this.cardTime);
+    
 
 
   }

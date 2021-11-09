@@ -66,13 +66,11 @@ export class BannerComponent implements OnInit {
     if (this.sectorName === "ภาค") { this.sectorName = "" };
     if (this.province === "จังหวัด") { this.province = "" };
 
-    this.share.searchName = value;
-    this.share.searchSector = this.sectorName;
-    this.share.searchProvince = this.province;
-    this.share.searchType = this.type;
-
-    console.log(this.type, this.sectorName, this.province);
-
+    localStorage.setItem("searchName",value);
+    localStorage.setItem("searchSector",this.sectorName);
+    localStorage.setItem("searchProvince",this.province);
+    localStorage.setItem("searchType",this.type);
+    
   }
 
 }

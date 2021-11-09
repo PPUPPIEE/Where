@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class ShareService {
 
-  searchName ="";
-  searchSector ="";
-  searchProvince ="";
-  searchType ="";
+  searchName = localStorage.getItem("searchName");
+  searchSector = localStorage.getItem("searchSector");
+  searchProvince =localStorage.getItem("searchProvince");
+  searchType = localStorage.getItem("searchType");
   
   // api
   apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
