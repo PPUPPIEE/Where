@@ -9,17 +9,20 @@
 .left{
 flex: 1;
 
-background-color: aqua;
+
     .naiy{
+        background-color: blue($color: #000000);
         max-height: 390px;
         max-width: 100%;
         width: 100%;
-        height: fit-content;
+        height: 100%;
+        
     }
 }
 
 
 .right{
+    
     flex:0.5;
     display: flex;
     flex-direction: column;

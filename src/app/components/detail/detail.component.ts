@@ -7,16 +7,17 @@ import { ShareService } from 'src/app/services/share.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  Parking : string ="";
+  Toilet : string = "";
+
 
   constructor(public share: ShareService) {
-
    }
 
   ngOnInit(): void {
-    console.log(this.share.detailToilet);
-    console.log(this.share.detailParking);
-    console.log(this.share.detailName);
-    console.log(this.share.detailSecurity)
+if(this.share.detailParking == true){ this.Parking ="ที่จอดรถ"}
+if(this.share.detailToilet == true){ this.Toilet ="ห้องน้ำ"}
+
   }
 
 }
