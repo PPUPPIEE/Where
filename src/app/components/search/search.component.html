@@ -54,14 +54,14 @@
 
       <!-- Card -->
       <div class="maincontent" *ngFor="let item of cardInfo">
-        <img src={{item.imageurl}}>
+        <img src={{item.imageurl[0]}}>
         <div class="container">
           <div class="detail">
             <div class="name">
               <h1>{{item.name}}<span> {{item.type}}</span></h1>
               <h3>{{item.opentime}}-{{item.closetime}}</h3>
             </div>
-            <h4 class="info">{{item.district}}</h4>
+            <h4 class="info">อำเภอ{{item.district}} จังหวัด{{item.province}}</h4>
           </div>
           <button class="detailbtn" (click)="pushDetail(
             item.name,
