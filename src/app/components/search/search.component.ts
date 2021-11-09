@@ -37,12 +37,23 @@ export class SearchComponent implements OnInit {
         "sector": this.share.searchSector,
         "province": this.share.searchProvince,
         "type": this.share.searchType
-      }).subscribe(res => {
-        this.cardInfo = res
+      }).subscribe(res=>
+        {
+          this.cardInfo = res
+        })
 
-      })
+
+        if( window.localStorage )
+        {
+          if( !localStorage.getItem('firstLoad') )
+          {
+            localStorage['firstLoad'] = true;
+            window.location.reload();
+          }  
+          else
+            localStorage.removeItem('firstLoad');
+        }  
   }
-
   pushDetail(
     name: string,
     sector: string,
@@ -59,20 +70,21 @@ export class SearchComponent implements OnInit {
     security: string,
     location: string,
   ) {
-    this.share.detailName = name;
-    this.share.detailSector = sector;
-    this.share.detailProvine = province;
-    this.share.detailDistrict = district;
-    this.share.detailType = type;
-    this.share.detailImageurl = imageurl;
-    this.share.detailOpentime = opentime;
-    this.share.detailClosetime = closetime;
-    this.share.detailToilet = toilet;
-    this.share.detailParking = parking;
-    this.share.detailDetail = detail;
-    this.share.detailContact = contact;
-    this.share.detailSecurity = security;
-    this.share.detailLocation = location;
+    localStorage.setItem("detailName",name);
+    localStorage.setItem("detailSector",sector);
+    localStorage.setItem("detailProvine",province);
+    localStorage.setItem("detailDistrict",district);
+    localStorage.setItem("detailType",type);
+    localStorage.setItem("detailImageurl",imageurl);
+    localStorage.setItem("detailOpentime",opentime);
+    localStorage.setItem("detailClosetime",closetime);
+    localStorage.setItem("detailToilet",JSON.stringify(toilet));
+    localStorage.setItem("detailParking",JSON.stringify(parking));
+    localStorage.setItem("detailDetail",detail);
+    localStorage.setItem("detailContact",contact);
+    localStorage.setItem("detailSecurity",security);
+    localStorage.setItem("detailLocation",location);
+    
   }
 
 }

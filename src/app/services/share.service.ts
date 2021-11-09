@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class ShareService {
 
-  searchName ="";
-  searchSector ="";
-  searchProvince ="";
-  searchType ="";
+  searchName = localStorage.getItem("searchName");
+  searchSector = localStorage.getItem("searchSector");
+  searchProvince =localStorage.getItem("searchProvince");
+  searchType = localStorage.getItem("searchType");
   
   // api
   apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
@@ -16,19 +16,19 @@ export class ShareService {
   constructor() { }
   
   //detail
-  detailName ="";
-  detailProvine="";
-  detailSector="";
-  detailDistrict="";
-  detailType="";
-  detailImageurl="";
-  detailOpentime="";
-  detailClosetime="";
-  detailToilet=false;
-  detailParking=false;
-  detailDetail="";
-  detailContact="";
-  detailSecurity="";
-  detailLocation="";
+  detailName = localStorage.getItem("detailName");
+  detailProvine= localStorage.getItem("detailProvine");
+  detailSector= localStorage.getItem("detailSector");
+  detailDistrict= localStorage.getItem("detailDistrict");
+  detailType= localStorage.getItem("detailType");
+  detailImageurl= localStorage.getItem("detailImageurl");
+  detailOpentime= localStorage.getItem("detailOpentime");
+  detailClosetime= localStorage.getItem("detailClosetime");
+  detailToilet= localStorage.getItem("detailToilet");
+  detailParking= localStorage.getItem("detailParking");
+  detailDetail= localStorage.getItem("detailDetail");
+  detailContact= localStorage.getItem("detailContact");
+  detailSecurity= localStorage.getItem("detailSecurity");
+  detailLocation= localStorage.getItem("detailLocation");
 
 }

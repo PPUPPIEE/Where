@@ -5,6 +5,7 @@ import { ShareService } from 'src/app/services/share.service';
 import { getProvince } from './province';
 
 
+
 @Component({
   selector: 'app-seachbar',
   templateUrl: './seachbar.component.html',
@@ -26,6 +27,7 @@ export class SeachbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProvince();
+    
   }
 
   getProvince() {
@@ -67,26 +69,18 @@ export class SeachbarComponent implements OnInit {
   }
 
   postSearch(value:string) {
-    //   this.http.post('https://dry-dawn-24095.herokuapp.com/api/search',{
-    //     "name":value,
-    //     "sector" : "",
-    //     "province" : "",
-    //     "type" : ""
-    // }).subscribe(Response => console.log(Response))
-    if(this.type === "ประเภท"){this.type =""};
-    if(this.sectorName === "ภาค"){this.sectorName =""};
-    if(this.province === "จังหวัด"){this.province =""};
-    if(this.type === ""){this.type ="ประเภท"};
-    if(this.sectorName === ""){this.sectorName ="ภาค"};
-    if(this.province === ""){this.province ="จังหวัด"};
 
-    this.share.searchName = value;
-    this.share.searchSector = this.sectorName;
-    this.share.searchProvince = this.province;
-    this.share.searchType = this.type;
+    if (this.type === "ประเภท") { this.type = "" };
+    if (this.sectorName === "ภาค") { this.sectorName = "" };
+    if (this.province === "จังหวัด") { this.province = "" };
 
-    console.log(this.type , this.sectorName, this.province);
-
+    localStorage.setItem("searchName",value);
+    localStorage.setItem("searchSector",this.sectorName);
+    localStorage.setItem("searchProvince",this.province);
+    localStorage.setItem("searchType",this.type);
+    
+    window.location.reload();
+    
   }
 
 }
