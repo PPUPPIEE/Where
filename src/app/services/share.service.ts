@@ -13,6 +13,8 @@ export class ShareService {
   // api
   apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
   apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
+  apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
+  apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
   constructor() { }
   
   //detail

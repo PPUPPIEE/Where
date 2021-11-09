@@ -41,7 +41,7 @@ nav {
     border-radius: 10px;
     overflow: hidden;
   }
-  .form {
+  .Nameform {
     font-size: 26px;
     display: flex;
     label {
@@ -115,6 +115,7 @@ nav {
     label{
       margin-right: 1rem;
       width: 370spx;
+<<<<<<< Updated upstream
     }
     input{
       display: none;
@@ -129,6 +130,19 @@ nav {
     .uploadimgs {
       outline: none;
     }
+=======
+    }
+    input{
+      display: none;
+      visibility: none;
+    }
+    button {
+      font-size: 16px;
+      border-radius: 10px;
+      width: 10pc;
+      margin-right: 1rem;
+    }
+>>>>>>> Stashed changes
   }
   .phonenumberform {
     font-size: 26px;

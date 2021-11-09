@@ -5,14 +5,14 @@
     </div>
     <div class="row justify-content center mt-2">
         <div class="col-md-12">
-            <form action="https://dry-dawn-24095.herokuapp.com/api/addlocation" method="post">
-                <div class="form">
+            <form [formGroup]="Form">
+                <div class="Nameform">
                     <label for="names">ชื่อสถานที่ :</label>
-                    <input type="text" class="form-control" id="names" name="name" placeholder="ชื่อสถานที่">
+                    <input type="text"  class="form-control" #input id="names" name="name" required [formControl]="$any(Form).get('formName')" [(ngModel)]="form.name" placeholder="ชื่อสถานที่">
                 </div>
                 <div class="locationsform">
                     <label for="location">ที่อยู่ :</label>
-                    <input type="text" class="form-control" id="location" name="location" placeholder="ที่อยู่">
+                    <input type="text" class="form-control" [value]="form.location" id="location" name="location" placeholder="ที่อยู่"  required [formControl]="$any(Form).get('formLocation')" [(ngModel)]="form.location">
                 </div>
                 <div class="Locationform">
                     <label>ประเภท :</label>
@@ -25,7 +25,6 @@
                                 {{typeList[index]}}
                             </button>
                         </div>
-                        <input type="text" class="form-control" name="type" value="{{type}}">
                     </div>
                     <label class="region">ภาค :</label>
                     <div ngbDropdown class="d-inline-block">
@@ -37,7 +36,6 @@
                                 {{sector[index]}}
                             </button>
                         </div>
-                        <input type="text" class="form-control" name="sector" value="{{sectorName}}">
                     </div>
                     <label class="provinceform">จังหวัด :</label>
                     <div ngbDropdown class="d-inline-block">
@@ -49,8 +47,7 @@
                                 (click)="changeProvince(newProvinceList[index])">
                                 {{newProvinceList[index]}}
                             </button>
-                        </div>
-                        <input type="text" class="form-control" name="province" value="{{province}}">
+                        </div>     
                     </div>
                 </div>
                 <div class="checkform">
@@ -62,27 +59,31 @@
                 <div class="Timeform">
                     <div class="md-form">
                         <label>เวลาเปิด :</label>
-                        <input type="time" name="opentime" class="form-control" value="08:00" mdbInput />
+                        <input type="time" name="opentime" [formControl]="$any(Form).get('formOpenTime')" [(ngModel)]="form.opentime" class="form-control"  mdbInput />
                     </div>
                     <div class="md-form">
                         <label>เวลาปิด :</label>
-                        <input type="time" name="closetime" class="form-control" value="22:00" mdbInput />
+                        <input type="time" name="closetime" class="form-control" [formControl]="$any(Form).get('formCloseTime')" [(ngModel)]="form.closetime" mdbInput />
                     </div>
                 </div>
                 <div class="descriptionform">
                     <label>รายละเอียด</label>
                     <div class="des">
-                        <textarea id="description" class="form-control" name="detail" cols="51px"
+                        <textarea id="description" [formControl]="$any(Form).get('formDetail')" [(ngModel)]="form.detail" class="form-control" name="detail" cols="51px"
                             rows="10px"></textarea>
                     </div>
                 </div>
                     <div class="imgsform">
                         <label>เพิ่มรูปภาพ :</label>
+<<<<<<< Updated upstream
                         <label>{{image}}</label>
+=======
+>>>>>>> Stashed changes
                         <input class="uploadimgs"
                                type="file"
                                accept="image/png, image/jpeg"
                                (change)="onFileChanged($event)"
+<<<<<<< Updated upstream
                                multiple
                             required #fileInput>
                             <button type="button" class="form-control" [disabled]="checkCon()" (click)="fileInput.click()">Select File</button>
@@ -94,19 +95,30 @@
                             <!-- <img src="{{image[0]}}" >
                             <img src="{{image[1]}}" >
                             <img src="{{image[2]}}" > -->
+=======
+                               [value]="form.imageurl"
+                            required #fileInput>
+                            <button type="button" class="form-control" [disabled]="checkCon() || checkifSelect" (click)="fileInput.click()">Select File</button>
+                            <label>จำนวน : {{image.length}}/3</label>
+>>>>>>> Stashed changes
                     </div>
                 <div class="phonenumberform">
                     <label>ติดต่อ :</label>
-                    <input type="number" class="form-control" name="contact" placeholder="เบอร์โทร">
+                    <input type="number" [formControl]="$any(Form).get('formContact')" [(ngModel)]="form.contact" class="form-control" name="contact" placeholder="เบอร์โทร">
                 </div>
                 <div class="securityform">
                     <label>ความปลอดภัย :</label>
-                    <input type="text" class="form-control" name="security"
+                    <input type="text" [formControl]="$any(Form).get('formSecutiry')" [(ngModel)]="form.security" class="form-control" name="security"
                         placeholder="ระบุโรงบาลที่อยู่ใกล้ที่สุด พร้อมระยะทาง">
                 </div>
                 <div class="buttonform">
+<<<<<<< Updated upstream
                     <button type="submit">Confirm</button>
                     <button type="reset">Clear</button>
+=======
+                    <button type="submit" (click)="onConfirm(input.value)">Confirm</button>
+                    <button type="reset" (click)="onClear()">Clear</button>
+>>>>>>> Stashed changes
                 </div>
             </form>
         </div>
