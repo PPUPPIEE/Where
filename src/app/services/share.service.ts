@@ -14,4 +14,21 @@ export class ShareService {
   apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
   apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
   constructor() { }
+  
+  //detail
+  detailName ="";
+  detailProvine="";
+  detailSector="";
+  detailDistrict="";
+  detailType="";
+  detailImageurl="";
+  detailOpentime="";
+  detailClosetime="";
+  detailToilet=false;
+  detailParking=false;
+  detailDetail="";
+  detailContact="";
+  detailSecurity="";
+  detailLocation="";
+
 }
