@@ -76,11 +76,25 @@
                             rows="10px"></textarea>
                     </div>
                 </div>
-                <div class="imgsform">
-                    <label>เพิ่มรูปภาพ :</label>
-                    <input class="uploadimgs" type="file" name="imageurl" multiple accept="image/png, image/jpeg"
-                        required>
-                </div>
+                    <div class="imgsform">
+                        <label>เพิ่มรูปภาพ :</label>
+                        <label>{{image}}</label>
+                        <input class="uploadimgs"
+                               type="file"
+                               accept="image/png, image/jpeg"
+                               (change)="onFileChanged($event)"
+                               multiple
+                            required #fileInput>
+                            <button type="button" class="form-control" [disabled]="checkCon()" (click)="fileInput.click()">Select File</button>
+                            <button type="button" class="form-control" (click)="onUpload()">Upload!</button>
+                            <label>จำนวน : {{image.length}}</label>
+                            <input type="url" name="imageurl" value="{{image[0]}}">
+                            <input type="url" name="imageurl" value="{{image[1]}}">
+                            <input type="url" name="imageurl" value="{{image[2]}}">
+                            <!-- <img src="{{image[0]}}" >
+                            <img src="{{image[1]}}" >
+                            <img src="{{image[2]}}" > -->
+                    </div>
                 <div class="phonenumberform">
                     <label>ติดต่อ :</label>
                     <input type="number" class="form-control" name="contact" placeholder="เบอร์โทร">
@@ -92,7 +106,7 @@
                 </div>
                 <div class="buttonform">
                     <button type="submit">Confirm</button>
-                    <button type="reset">clear</button>
+                    <button type="reset">Clear</button>
                 </div>
             </form>
         </div>

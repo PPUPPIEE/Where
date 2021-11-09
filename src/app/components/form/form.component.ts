@@ -24,6 +24,8 @@ export class FormComponent implements OnInit {
   sectorName: string = 'ภาค';
   typeList: string[] = ['ร้านอาหาร', 'วัฒนธรรม', 'สถานบันเทิงอารมณ์'];
   type = 'ประเภท';
+  image: string[] = [];
+  selectedFile!: File;
 
   constructor(private http: HttpClient, public share: ShareService) {}
 
@@ -66,5 +68,33 @@ export class FormComponent implements OnInit {
       });
     }
   }
-  
+
+  onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+  }
+
+  checkCon() {
+    if(this.image.length >=3){
+      return true;
+    }
+    return false;
+  }
+
+  onUpload() {
+    const uploadData = new FormData();
+    uploadData.append('file', this.selectedFile, this.selectedFile.name);
+    this.http
+      .post(
+        'https://dry-dawn-24095.herokuapp.com/api/firebase/upload',
+        uploadData,
+        { responseType: 'text' }
+      )
+      .subscribe((event) => {
+        this.image.push(event);
+        console.log(this.image);
+      });
+  }
+
+    
 }

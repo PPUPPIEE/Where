@@ -4,7 +4,7 @@ export interface getProvince{
     name: string;
     province: string;
     type: string;
-    imageurl: object;
+    imageurl : string[];
     opentime: string;
     closetime: string;
     toilet: boolean;
