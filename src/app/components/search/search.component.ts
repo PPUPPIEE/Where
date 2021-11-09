@@ -12,9 +12,20 @@ import { getSearchResult } from './search.result';
 export class SearchComponent implements OnInit {
 
   cardInfo: getSearchResult[] = [];
-  cardName: string = "";
-  cardImage: string = "";
-  cardTime: string = "";
+  // CardName: string = "";
+  // CardSector: string = "";
+  // CardProvince: string = "";
+  // CardDistrict: string= "";
+  // CardType: string= "";
+  // CardImageurl: string= "";
+  // CardOpentime: string= "";
+  // CardClosetime: string= "";
+  // CardToilet: boolean= false;
+  // CardParking: boolean= false;
+  // CardDetail: string= "";
+  // CardContact: string= "";
+  // CardSecurity: string= "";
+  // CardLocation: string= "";
 
   constructor(public share: ShareService,
     private http: HttpClient) { }
@@ -30,22 +41,50 @@ export class SearchComponent implements OnInit {
         {
           this.cardInfo = res
         })
+
+
+        if( window.localStorage )
+        {
+          if( !localStorage.getItem('firstLoad') )
+          {
+            localStorage['firstLoad'] = true;
+            window.location.reload();
+          }  
+          else
+            localStorage.removeItem('firstLoad');
+        }  
   }
-
-
-
-
-
-  
-  pushDetail(name: string, img: string, time: string) {
-    this.cardName = name;
-    this.cardImage = img;
-    this.cardTime = time;
-    console.log(this.cardName);
-    console.log(this.cardImage);
-    console.log(this.cardTime);
-
-
+  pushDetail(
+    name: string,
+    sector: string,
+    province: string,
+    district: string,
+    type: string,
+    imageurl: string,
+    opentime: string,
+    closetime: string,
+    toilet: boolean,
+    parking: boolean,
+    detail: string,
+    contact: string,
+    security: string,
+    location: string,
+  ) {
+    localStorage.setItem("detailName",name);
+    localStorage.setItem("detailSector",sector);
+    localStorage.setItem("detailProvine",province);
+    localStorage.setItem("detailDistrict",district);
+    localStorage.setItem("detailType",type);
+    localStorage.setItem("detailImageurl",imageurl);
+    localStorage.setItem("detailOpentime",opentime);
+    localStorage.setItem("detailClosetime",closetime);
+    localStorage.setItem("detailToilet",JSON.stringify(toilet));
+    localStorage.setItem("detailParking",JSON.stringify(parking));
+    localStorage.setItem("detailDetail",detail);
+    localStorage.setItem("detailContact",contact);
+    localStorage.setItem("detailSecurity",security);
+    localStorage.setItem("detailLocation",location);
+    
   }
 
 }

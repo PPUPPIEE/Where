@@ -1,20 +1,20 @@
 <app-navbar></app-navbar>
 <div class="container px-4 px-lg-5">
 
-  <div class="row gx-4 gx-lg-5 align-items-center my-5">
-    <div class="col-lg-7">
-      <img class="img-fluid rounded mb-4 mb-lg-0" src="assets/img/1.The-Grand-Palace-1.jpg" alt="..." />
+  <div class="image">
+    <div class="left">
+      <img class="img-fluid" class="naiy" src="{{this.share.detailImageurl}}" alt="..." />
     </div>
-    <div class="col-lg-5">
-      <img class="img-fluid rounded mb-4 mb-lg-0" src="assets/img/1.The-Grand-Palace-1.jpg" alt="..." />
-      <img class="img-fluid rounded mb-4 mb-lg-0" src="assets/img/1.The-Grand-Palace-1.jpg" alt="..." />
+    <div class="right">
+      <img class="img-fluid" src="assets/img/1.The-Grand-Palace-1.jpg" alt="..." />
+      <img class="img-fluid" src="assets/img/1.The-Grand-Palace-1.jpg" alt="..." />
     </div>
   </div>
 
   <div class="card  my-2 py-2 ">
     <div class="card-body">
-      <h5 class="card-title">วัดอะไรซักอย่าง</h5>
-      <p class="card-text">อ.จังหวัด</p>
+      <h5 class="card-title">{{this.share.detailName}}</h5>
+      <p class="card-text">{{this.share.detailDistrict}},{{this.share.detailProvine}}</p>
     </div>
   </div>
 
@@ -23,7 +23,7 @@
       <div class="card h-100">
         <div class="card-body">
           <h2 class="card-title">ประเภท</h2>
-          <p class="card-text">วัด</p>
+          <p class="card-text">{{this.share.detailType}}</p>
         </div>
        
       </div>
@@ -32,7 +32,7 @@
       <div class="card h-100">
         <div class="card-body">
           <h2 class="card-title">สิ่งอำนวยความสะดวก</h2>
-          <p class="card-text">ห้องน้ำ,ร้านอาหาร</p>
+          <p class="card-text">{{Parking}} {{Toilet}}</p>
         </div>
         
       </div>
@@ -41,7 +41,7 @@
       <div class="card h-100">
         <div class="card-body">
           <h2 class="card-title">ความปลอดภัย</h2>
-          <p class="card-text">มีโรงพยาบาลในระยะ 10 กิโลเมตร</p>
+          <p class="card-text">{{this.share.detailSecurity}}</p>
         </div>
       </div>
 
@@ -51,7 +51,8 @@
   <div class="card  my-2 py-2 ">
     <div class="card-body">
       <h5 class="card-title">รายละเอียด</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo laudantium vero error illum, itaque esse ipsa impedit? Aliquam minima ipsa sapiente aperiam placeat, quidem sequi blanditiis aliquid quas provident ex!</p>
+      <p class="card-text">{{this.share.detailDetail}}</p>
     </div>
   </div>
 </div>
+<app-footer></app-footer>
