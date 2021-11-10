@@ -120,6 +120,97 @@ h5{
     .detailbtn:hover {background-color: #FF6C02;}
   }
 }
+@media screen and (max-width: 1310px) {
+
+  
+.grid{
+  display: grid;
+  grid-template-columns: 5fr;
+  grid-template-rows: minmax(auto, auto);
+  grid-template-areas: 
+  'header header'
+  'leftbar leftbar'
+  'main main'
+  ;
+}
+img{
+  width: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  border: 9px;
+}
+body{
+  
+ padding: 40px;
+ padding-left: 50px;
+ padding-right: 50px;
+}
+}
+@media screen and (max-width: 860px) {
+  .grid{
+    display: grid;
+    grid-template-columns: 5fr;
+    grid-template-rows: minmax(auto, auto);
+    grid-template-areas: 
+    'header header'
+    'leftbar leftbar'
+    'main main'
+    ;
+  }
+  body{
+    
+   padding: 0px;
+   padding-left: 0px;
+   padding-right: 0px;
+  }
+  
+  .maincontent {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    height: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    
+    button{
+      display: block;
+      height: auto;
+      padding: 10px;
+      
+      }
+      .container{
+        display: block;
+      }
+      .detail{
+        display: block;
+      }
+      .name{
+        display: block;
+      }
+  }
+  h1{
+    font-size: 17px;
+    }
+    span{
+      font-size: 14px;
+    }
+    img{
+      width: 100%;
+      overflow: hidden;
+      object-fit: cover;
+      border: 9px;
+      height: 150px;
+      justify-self: center;
+      display: flex;
+      align-self: center;
+      
+    }
+  
+  
+  
+  
+  
+  }
 
 
 
