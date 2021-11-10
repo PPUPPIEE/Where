@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class ShareService {
 
+  constructor() { }
+
+  //no image
+  noImage = "assets/img/no-image-available_1.png"
+
   searchName = localStorage.getItem("searchName");
   searchSector = localStorage.getItem("searchSector");
   searchProvince =localStorage.getItem("searchProvince");
@@ -15,7 +20,7 @@ export class ShareService {
   apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
   apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
   apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
-  constructor() { }
+
   
   //detail
   detailName = localStorage.getItem("detailName");
@@ -23,7 +28,7 @@ export class ShareService {
   detailSector= localStorage.getItem("detailSector");
   detailDistrict= localStorage.getItem("detailDistrict");
   detailType= localStorage.getItem("detailType");
-  detailImageurl= localStorage.getItem("detailImageurl");
+  detailImageurl= JSON.parse(localStorage.getItem("detailImageurl") || "[]");
   detailOpentime= localStorage.getItem("detailOpentime");
   detailClosetime= localStorage.getItem("detailClosetime");
   detailToilet= localStorage.getItem("detailToilet");

@@ -20,38 +20,32 @@
 <app-seachbar></app-seachbar>
     </div>
     <div class="page-leftbar content">
-      <div class="Boxofradio">
-        <h5>ระยะเวลาทำการ</h5>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio1">ไม่จำกัดระยะเวลาทำการ</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio2">จำกัดระยะเวลาทำการ</label>
-        </div><br>
-        <h5>สิ่งอำนวยความสะดวก</h5>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio3">ห้องน้ำ</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio4">บริการรถนำเที่ยว</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio5">ร้านอาหาร</label>
-        </div>
+      <h3>สิ่งอำนวยความสะดวก</h3>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" >
+          รถนำเที่ยว
+        </label>
       </div>
-    </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" >
+          ห้องน้ำ
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" >
+          ที่จอดรถ
+        </label>
+      </div>
+  </div>  
 
 
 
 
 
     <div class="page-main content">
-
       <!-- Card -->
       <div class="maincontent" *ngFor="let item of cardInfo">
         <img src={{item.imageurl[0]}}>
@@ -61,7 +55,7 @@
               <h1>{{item.name}}<span> {{item.type}}</span></h1>
               <h3>{{item.opentime}}-{{item.closetime}}</h3>
             </div>
-            <h4 class="info">อำเภอ{{item.district}} จังหวัด{{item.province}}</h4>
+            <h4 class="info">อำเภอ {{item.district}} จังหวัด {{item.province}}</h4>
           </div>
           <button class="detailbtn" (click)="pushDetail(
             item.name,
@@ -78,7 +72,9 @@
             item.contact,
             item.security,
             item.location)"
-          routerLink='/detail' routerLinkActive="active">รายละเอียด</button>
+            routerLink='/detail' routerLinkActive="active"
+          >
+          รายละเอียด</button>
         </div>
       </div>
       <!--  -->

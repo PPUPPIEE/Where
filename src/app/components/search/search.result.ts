@@ -5,7 +5,7 @@ export interface getSearchResult {
     province: string;
     district: string;
     type: string;
-    imageurl: string;
+    imageurl: string[];
     opentime: string;
     closetime: string;
     toilet: boolean;

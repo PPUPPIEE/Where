@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     province: string,
     district: string,
     type: string,
-    imageurl: string,
+    imageurl:string[],
     opentime: string,
     closetime: string,
     toilet: boolean,
@@ -74,8 +74,7 @@ export class SearchComponent implements OnInit {
     localStorage.setItem("detailSector",sector);
     localStorage.setItem("detailProvine",province);
     localStorage.setItem("detailDistrict",district);
-    localStorage.setItem("detailType",type);
-    localStorage.setItem("detailImageurl",imageurl);
+    localStorage.setItem("detailType",type); 
     localStorage.setItem("detailOpentime",opentime);
     localStorage.setItem("detailClosetime",closetime);
     localStorage.setItem("detailToilet",JSON.stringify(toilet));
@@ -84,6 +83,9 @@ export class SearchComponent implements OnInit {
     localStorage.setItem("detailContact",contact);
     localStorage.setItem("detailSecurity",security);
     localStorage.setItem("detailLocation",location);
+    console.log(imageurl);
+
+    localStorage.setItem("detailImageurl", JSON.stringify(imageurl));
     
   }
 
