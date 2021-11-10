@@ -6,14 +6,17 @@ import { SearchComponent } from './components/search/search.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 import { AdminFormComponent } from './components/admin-form/admin-form.component';
-import {TableComponent} from './components/admin-form/table/table.component'
+import {TableComponent} from './components/admin-form/table/table.component';
+import {AlltableComponent} from './components/admin-form/alltable/alltable.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'form', component: FormComponent },
   { path: 'search', component: SearchComponent },
   { path: 'detail', component: DetailComponent },
   { path: 'admin', component: AdminFormComponent },
-  { path: 'table', component: TableComponent},
+  { path: 'unchecktable', component: TableComponent},
+  { path: 'alltable',component: AlltableComponent},
   { path: '404', component: NotFoundComponentComponent },
   { path: '**', redirectTo: '/404' }
 ];

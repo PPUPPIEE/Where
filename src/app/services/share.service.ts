@@ -22,7 +22,10 @@ export class ShareService {
   apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
   apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
   apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
-
+  apiGetUnchecked = "https://dry-dawn-24095.herokuapp.com/api/showuncheck";
+  apiChangeStatus = "https://dry-dawn-24095.herokuapp.com/api/updatestatus";
+  apiDeleteLocation = "https://dry-dawn-24095.herokuapp.com/api/deletelocation";
+  apiGetall = "https://dry-dawn-24095.herokuapp.com/api/getall";
   
   //detail
   detailName = localStorage.getItem("detailName");

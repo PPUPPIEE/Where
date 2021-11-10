@@ -6,11 +6,11 @@ import { dataTable } from './data';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
+  selector: 'app-alltable',
+  templateUrl: './alltable.component.html',
+  styleUrls: ['./alltable.component.scss'],
 })
-export class TableComponent implements OnInit {
+export class AlltableComponent implements OnInit {
   data: dataTable[] = [];
   correct: string = 'correct';
   delete: string = 'delete';
@@ -22,25 +22,9 @@ export class TableComponent implements OnInit {
     private modalService: NgbModal
   ) {}
 
-
-  openCorrectDialog(content:any) {
-    this.modalService.open(content, { centered: true });
-  }
   openDeleteDialog(content:any) {
     this.modalService.open(content, { centered: true });
   }
-
-  onConfirm(name: string) {
-    this.http
-      .patch(this.share.apiChangeStatus, {
-        name: name,
-        check: true,
-      })
-      .subscribe((e) => {
-        window.location.reload();
-      });
-  }
-
 
   async Deleteimage(url: string[]) {
     url.forEach(url => {
@@ -67,11 +51,17 @@ export class TableComponent implements OnInit {
   }
 
 
+
+
+
+
   ngOnInit(): void {
     this.http
-      .get<dataTable[]>(this.share.apiGetUnchecked)
+      .get<dataTable[]>(this.share.apiGetall)
       .subscribe((res) => {
         this.data = res;
+        console.log(this.data);
+        
       });
 
     if (window.localStorage) {

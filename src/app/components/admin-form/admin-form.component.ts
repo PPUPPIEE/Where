@@ -40,7 +40,7 @@ export class AdminFormComponent implements OnInit {
     if (this.username === "admin" && this.password === "p@ssw0rd") {
       console.log("Login Success");
      localStorage.setItem("checkTable", "pass")
-      this.router.navigate(['/table']); 
+      this.router.navigate(['/unchecktable']); 
     }
     else {
       alert("Username หรือ Password ไม่ถูกต้อง")
