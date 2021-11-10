@@ -20,6 +20,8 @@ export class ShareService {
   // api
   apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
   apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
+  apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
+  apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
 
   
   //detail
@@ -28,7 +30,7 @@ export class ShareService {
   detailSector= localStorage.getItem("detailSector");
   detailDistrict= localStorage.getItem("detailDistrict");
   detailType= localStorage.getItem("detailType");
-  detailImageurl= JSON.parse(localStorage.getItem("imageUrl") || "[]");
+  detailImageurl= JSON.parse(localStorage.getItem("detailImageurl") || "[]");
   detailOpentime= localStorage.getItem("detailOpentime");
   detailClosetime= localStorage.getItem("detailClosetime");
   detailToilet= localStorage.getItem("detailToilet");

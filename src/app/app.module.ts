@@ -45,7 +45,8 @@ import { TableComponent } from './components/admin-form/table/table.component';
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ShareService],
   bootstrap: [AppComponent]
