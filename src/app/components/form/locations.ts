@@ -13,4 +13,5 @@ export interface getProvince{
     contact: string;
     security: string;
     location: string;
+    district: string;
 }

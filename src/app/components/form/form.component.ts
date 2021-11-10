@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from 'src/app/services/share.service';
-import { FormControl, FormGroup, FormBuilder, Validators,} from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { getProvince } from './locations';
 
@@ -27,30 +27,13 @@ export class FormComponent implements OnInit {
   typeList: string[] = ['ร้านอาหาร', 'วัฒนธรรม', 'สถานบันเทิงอารมณ์'];
   type = 'ประเภท';
   image: string[] = [];
-<<<<<<< Updated upstream
-  selectedFile!: File;
-=======
   selectedFile!: FileList;
   checkifSelect: boolean = false;
   checkifUpload: boolean = true;
->>>>>>> Stashed changes
-
+  public parking : boolean = false;
+  toilet : boolean = false;
   constructor(private http: HttpClient, public share: ShareService, private fb: FormBuilder) {}
-    form = {
-    name: "",
-    location: "",
-    type: this.type,
-    sector: this.sectorName,
-    province: this.sectorName,
-    toilet: false,
-    parking: false,
-    opentime: "08:00",
-    closetime: "22:00",
-    detail: "",
-    imageurl: this.image,
-    contact: "",
-    security: ""
-  }
+
   
   ngOnInit(): void {
     this.getProvince();
@@ -98,6 +81,15 @@ export class FormComponent implements OnInit {
     this.type = value;
   }
 
+  onSelectParking(){
+  this.parking = !this.parking
+  console.log(this.parking);
+  }
+  onSelectToilet(){
+  this.toilet = !this.toilet
+  console.log(this.toilet);
+  }
+
   addProvince() {
     if (this.sectorName == 'ภาค') {
       this.provinceList.forEach((item) => {
@@ -105,43 +97,14 @@ export class FormComponent implements OnInit {
       });
     }
   }
-<<<<<<< Updated upstream
-
-  onFileChanged(event: any) {
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
-  }
-
-  checkCon() {
-    if(this.image.length >=3){
-=======
   checkCon() {
     //check image > 3
     if (this.image.length >= 3) {
->>>>>>> Stashed changes
       return true;
     }
     return false;
   }
 
-<<<<<<< Updated upstream
-  onUpload() {
-    const uploadData = new FormData();
-    uploadData.append('file', this.selectedFile, this.selectedFile.name);
-    this.http
-      .post(
-        'https://dry-dawn-24095.herokuapp.com/api/firebase/upload',
-        uploadData,
-        { responseType: 'text' }
-      )
-      .subscribe((event) => {
-        this.image.push(event);
-        console.log(this.image);
-      });
-  }
-
-    
-=======
   onFileChanged(event: any) {
     this.selectedFile = event.target.files;
     console.log(this.selectedFile);
@@ -196,27 +159,28 @@ export class FormComponent implements OnInit {
         });
     });
   }
+  
+  onConfirm(name: string,location:string, openTime:string, closeTime:string, detail:string, contact:string, security:string, district: string) {
 
-  onConfirm(name: string) {
     this.http.post(this.share.apiAddLocation,
       {
         name: name,
-        location: "",
+        location: location,
         type: this.type,
         sector: this.sectorName,
-        province: this.sectorName,
-        toilet: false,
-        parking: false,
-        opentime: "08:00",
-        closetime: "22:00",
-        detail: "",
+        province: this.province,
+        toilet: this.toilet,
+        parking: this.parking,
+        opentime: openTime,
+        closetime: closeTime,
+        detail: detail,
         imageurl: this.image,
-        contact: "",
-        security: ""
+        contact: contact,
+        security: security,
+        district: district
       }
     ).subscribe((data) => {
       console.log(data);
     });
   }
->>>>>>> Stashed changes
 }

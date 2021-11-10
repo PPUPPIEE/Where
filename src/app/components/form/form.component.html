@@ -4,123 +4,113 @@
         <h1>เพิ่มสถานที่ท่องเที่ยว</h1>
     </div>
     <div class="row justify-content center mt-2">
-        <div class="col-md-12">
-            <form [formGroup]="Form">
-                <div class="Nameform">
-                    <label for="names">ชื่อสถานที่ :</label>
-                    <input type="text"  class="form-control" #input id="names" name="name" required [formControl]="$any(Form).get('formName')" [(ngModel)]="form.name" placeholder="ชื่อสถานที่">
-                </div>
-                <div class="locationsform">
-                    <label for="location">ที่อยู่ :</label>
-                    <input type="text" class="form-control" [value]="form.location" id="location" name="location" placeholder="ที่อยู่"  required [formControl]="$any(Form).get('formLocation')" [(ngModel)]="form.location">
-                </div>
-                <div class="Locationform">
-                    <label>ประเภท :</label>
-                    <div ngbDropdown class="d-inline-block">
-                        <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
-                            name="type">{{type}}</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="form-control" ngbDropdownItem type="button"
-                                *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
-                                {{typeList[index]}}
-                            </button>
-                        </div>
-                    </div>
-                    <label class="region">ภาค :</label>
-                    <div ngbDropdown class="d-inline-block">
-                        <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
-                            name="sector">{{sectorName}}</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="form-control" ngbDropdownItem type="button"
-                                *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
-                                {{sector[index]}}
-                            </button>
-                        </div>
-                    </div>
-                    <label class="provinceform">จังหวัด :</label>
-                    <div ngbDropdown class="d-inline-block">
-                        <button class="form-control" type="button" id="dropdownBasic1 " ngbDropdownToggle
-                            (click)="addProvince()" name="province">{{province}}</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="form-control" ngbDropdownItem type="button"
-                                *ngFor="let item of newProvinceList; let index=index"
-                                (click)="changeProvince(newProvinceList[index])">
-                                {{newProvinceList[index]}}
-                            </button>
-                        </div>     
+        <div class="col-md-12" required="true">
+           <form action="">
+            <div class="Nameform">
+                <label for="names">ชื่อสถานที่ :</label>
+                <input required type="text" name="Nameform" class="form-control" #inputName id="names" placeholder="ชื่อสถานที่">
+            </div>
+            <div class="locationsform">
+                <label for="location">Google Map :</label>
+                <input type="text" class="form-control" #inputLocation id="location"
+                    placeholder="Link URL สถานที่ท่องเที่ยว">
+            </div>
+            <div class="Locationform">
+                <label>ประเภท :</label>
+                <div ngbDropdown class="d-inline-block">
+                    <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
+                        name="type">{{type}}</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="form-control" ngbDropdownItem type="button"
+                            *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
+                            {{typeList[index]}}
+                        </button>
                     </div>
                 </div>
-                <div class="checkform">
-                    <input type="checkbox" class="form-control" id="bathroom" name="toilet" value="true">
-                    <label for="bathroom"> ห้องน้ำ</label>
-                    <input type="checkbox" class="form-control" id="bus" name="parking" value="true">
-                    <label for="bus"> ที่จอดรถ </label>
-                </div>
-                <div class="Timeform">
-                    <div class="md-form">
-                        <label>เวลาเปิด :</label>
-                        <input type="time" name="opentime" [formControl]="$any(Form).get('formOpenTime')" [(ngModel)]="form.opentime" class="form-control"  mdbInput />
-                    </div>
-                    <div class="md-form">
-                        <label>เวลาปิด :</label>
-                        <input type="time" name="closetime" class="form-control" [formControl]="$any(Form).get('formCloseTime')" [(ngModel)]="form.closetime" mdbInput />
+                <label class="region">ภาค :</label>
+                <div ngbDropdown class="d-inline-block">
+                    <button class="form-control" type="button" id="dropdownBasic1" ngbDropdownToggle
+                        name="sector">{{sectorName}}</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="form-control" ngbDropdownItem type="button"
+                            *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
+                            {{sector[index]}}
+                        </button>
                     </div>
                 </div>
-                <div class="descriptionform">
-                    <label>รายละเอียด</label>
-                    <div class="des">
-                        <textarea id="description" [formControl]="$any(Form).get('formDetail')" [(ngModel)]="form.detail" class="form-control" name="detail" cols="51px"
-                            rows="10px"></textarea>
+                <label class="provinceform">จังหวัด :</label>
+                <div ngbDropdown class="d-inline-block">
+                    <button class="form-control" type="button" id="dropdownBasic1 " ngbDropdownToggle
+                        (click)="addProvince()" name="province">{{province}}</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="form-control" ngbDropdownItem type="button"
+                            *ngFor="let item of newProvinceList; let index=index"
+                            (click)="changeProvince(newProvinceList[index])">
+                            {{newProvinceList[index]}}
+                        </button>
                     </div>
                 </div>
-                    <div class="imgsform">
-                        <label>เพิ่มรูปภาพ :</label>
-<<<<<<< Updated upstream
-                        <label>{{image}}</label>
-=======
->>>>>>> Stashed changes
-                        <input class="uploadimgs"
-                               type="file"
-                               accept="image/png, image/jpeg"
-                               (change)="onFileChanged($event)"
-<<<<<<< Updated upstream
-                               multiple
-                            required #fileInput>
-                            <button type="button" class="form-control" [disabled]="checkCon()" (click)="fileInput.click()">Select File</button>
-                            <button type="button" class="form-control" (click)="onUpload()">Upload!</button>
-                            <label>จำนวน : {{image.length}}</label>
-                            <input type="url" name="imageurl" value="{{image[0]}}">
-                            <input type="url" name="imageurl" value="{{image[1]}}">
-                            <input type="url" name="imageurl" value="{{image[2]}}">
-                            <!-- <img src="{{image[0]}}" >
-                            <img src="{{image[1]}}" >
-                            <img src="{{image[2]}}" > -->
-=======
-                               [value]="form.imageurl"
-                            required #fileInput>
-                            <button type="button" class="form-control" [disabled]="checkCon() || checkifSelect" (click)="fileInput.click()">Select File</button>
-                            <label>จำนวน : {{image.length}}/3</label>
->>>>>>> Stashed changes
-                    </div>
-                <div class="phonenumberform">
-                    <label>ติดต่อ :</label>
-                    <input type="number" [formControl]="$any(Form).get('formContact')" [(ngModel)]="form.contact" class="form-control" name="contact" placeholder="เบอร์โทร">
+                <label class="districtForm">อำเภอ :</label>
+                <div>
+                    <input type="text" class="form-control" #inputDistrict placeholder="อำเภอ">
                 </div>
-                <div class="securityform">
-                    <label>ความปลอดภัย :</label>
-                    <input type="text" [formControl]="$any(Form).get('formSecutiry')" [(ngModel)]="form.security" class="form-control" name="security"
-                        placeholder="ระบุโรงบาลที่อยู่ใกล้ที่สุด พร้อมระยะทาง">
+            </div>
+            <div class="checkform">
+                <input type="checkbox" (click)="onSelectToilet()" class="form-control" id="toilet" name="toilet">
+                <label for="toilet"> ห้องน้ำ</label>
+                <input type="checkbox" (click)="onSelectParking()" class="form-control" id="bus" name="parking">
+                <label for="bus"> ที่จอดรถ </label>
+            </div>
+            <div class="Timeform">
+                <div class="md-form">
+                    <label>เวลาเปิด :</label>
+                    <input type="time" name="opentime" class="form-control" #inputOpenTime mdbInput />
                 </div>
-                <div class="buttonform">
-<<<<<<< Updated upstream
-                    <button type="submit">Confirm</button>
-                    <button type="reset">Clear</button>
-=======
-                    <button type="submit" (click)="onConfirm(input.value)">Confirm</button>
-                    <button type="reset" (click)="onClear()">Clear</button>
->>>>>>> Stashed changes
+                <div class="md-form">
+                    <label>เวลาปิด :</label>
+                    <input type="time" name="closetime" class="form-control" #inputCloseTime mdbInput />
                 </div>
-            </form>
+            </div>
+            <div class="descriptionform">
+                <label>รายละเอียด</label>
+                <div class="des">
+                    <textarea id="description" class="form-control" #inputDetail cols="51px" rows="10px"></textarea>
+                </div>
+            </div>
+            <div class="imgsform">
+                <label>เพิ่มรูปภาพ :</label>
+                <input class="uploadimgs" type="file" accept="image/png, image/jpeg" (change)="onFileChanged($event)"
+                    required #fileInput>
+                <button type="button" class="form-control" [disabled]="checkCon() || checkifSelect"
+                    (click)="fileInput.click()">Select File</button>
+                <label>จำนวน : {{image.length}}/3</label>
+            </div>
+            <div class="phonenumberform">
+                <label>ติดต่อ :</label>
+                <input type="number" class="form-control" #inputContact placeholder="เบอร์โทร">
+            </div>
+            <div class="securityform">
+                <label>ความปลอดภัย :</label>
+                <input type="text" class="form-control" #inputSecurity
+                    placeholder="ระบุโรงบาลที่อยู่ใกล้ที่สุด พร้อมระยะทาง">
+            </div>
+            <div class="buttonform">
+                <button type="submit" (click)="onConfirm(
+                        inputName.value,
+                        inputLocation.value,
+                        inputOpenTime.value,
+                        inputCloseTime.value,
+                        inputDetail.value,
+                        inputContact.value,
+                        inputSecurity.value,
+                        inputDistrict.value
+                        )">
+                    Confirm
+                </button>
+                <button type="reset" (click)="onClear()">Clear</button>
+            </div>
+           </form>
         </div>
     </div>
 </div>
+

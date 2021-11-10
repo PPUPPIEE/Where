@@ -52,7 +52,8 @@ nav {
     font-size: 26px;
     display: flex;
     label {
-      width: 70px;
+      width: 180px;
+
     }
   }
   .descriptionform {
@@ -75,12 +76,13 @@ nav {
       margin-right:0px;
       width: 90px;
     }
-    button{
-      margin-right: 1rem;
+    .districtForm{
+      margin-left: 1rem;
+      margin-right:0px;
+      width: 90px;
     }
-    input{
-      display: none;
-      visibility: none;
+    button {
+      margin-right: 1rem;
     }
   }
   .checkform {
@@ -115,7 +117,6 @@ nav {
     label{
       margin-right: 1rem;
       width: 370spx;
-<<<<<<< Updated upstream
     }
     input{
       display: none;
@@ -127,22 +128,6 @@ nav {
       width: 10pc;
       margin-right: 1rem;
     }
-    .uploadimgs {
-      outline: none;
-    }
-=======
-    }
-    input{
-      display: none;
-      visibility: none;
-    }
-    button {
-      font-size: 16px;
-      border-radius: 10px;
-      width: 10pc;
-      margin-right: 1rem;
-    }
->>>>>>> Stashed changes
   }
   .phonenumberform {
     font-size: 26px;
