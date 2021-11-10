@@ -41,7 +41,6 @@ import { SeachbarComponent } from './components/seachbar/seachbar.component';
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule
   ],
   providers: [ShareService],
