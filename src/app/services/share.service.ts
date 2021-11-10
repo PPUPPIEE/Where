@@ -10,6 +10,8 @@ export class ShareService {
   //no image
   noImage = "assets/img/no-image-available_1.png"
 
+  checkTable = localStorage.getItem("checkTable");
+
   searchName = localStorage.getItem("searchName");
   searchSector = localStorage.getItem("searchSector");
   searchProvince =localStorage.getItem("searchProvince");
