@@ -17,32 +17,24 @@
 
   <div class="grid">
     <div class="page-header content">
-<app-seachbar></app-seachbar>
+      <app-seachbar></app-seachbar>
     </div>
     <div class="page-leftbar content">
       <h3>สิ่งอำนวยความสะดวก</h3>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" >
-          รถนำเที่ยว
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-        <label class="form-check-label" >
+      <div class="form-check" >
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="filterToilet(this.checkToilet)" checked>
+        <label class="form-check-label">
           ห้องน้ำ
         </label>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-        <label class="form-check-label" >
+
+      <div class="form-check" >
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="filterParking(this.checkParking)" checked>
+        <label class="form-check-label">
           ที่จอดรถ
         </label>
       </div>
-  </div>  
-
-
-
+    </div>
 
 
     <div class="page-main content">
@@ -66,14 +58,14 @@
             item.imageurl,
             item.opentime,
             item.closetime,
-            item.facility,
+            item.toilet,
+            item.parking,
             item.detail,
             item.contact,
             item.security,
-            item.location)"
-            routerLink='/detail' routerLinkActive="active"
-          >
-          รายละเอียด</button>
+            item.location)" routerLink='/detail' routerLinkActive="active">
+            รายละเอียด
+          </button>
         </div>
       </div>
       <!--  -->
@@ -83,7 +75,7 @@
   </div>
 
 
-  
+
 </body>
 
 <app-footer></app-footer>

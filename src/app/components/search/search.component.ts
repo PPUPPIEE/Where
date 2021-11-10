@@ -11,79 +11,106 @@ import { getSearchResult } from './search.result';
 })
 export class SearchComponent implements OnInit {
 
+  filterCheckbox: string[] = ["ห้องน้ำ", "ที่จอดรถ"];
   cardInfo: getSearchResult[] = [];
-  // CardName: string = "";
-  // CardSector: string = "";
-  // CardProvince: string = "";
-  // CardDistrict: string= "";
-  // CardType: string= "";
-  // CardImageurl: string= "";
-  // CardOpentime: string= "";
-  // CardClosetime: string= "";
-  // CardToilet: boolean= false;
-  // CardParking: boolean= false;
-  // CardDetail: string= "";
-  // CardContact: string= "";
-  // CardSecurity: string= "";
-  // CardLocation: string= "";
+  temp: getSearchResult[] = [];
 
-  constructor(public share: ShareService,
+  checkToilet: boolean = true;
+  checkParking: boolean = true;
+
+
+  constructor(
+    public share: ShareService,
     private http: HttpClient) { }
 
   ngOnInit(): void {
+
+    if (window.localStorage) {
+      if (!localStorage.getItem('firstLoad')) {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }
+      else
+        localStorage.removeItem('firstLoad');
+    }
+
+    this.getSearchResult();
+
+
+  }
+
+  getSearchResult() {
     this.http.post<getSearchResult[]>(this.share.apiSearch,
       {
         "name": this.share.searchName,
         "sector": this.share.searchSector,
         "province": this.share.searchProvince,
         "type": this.share.searchType
-      }).subscribe(res=>
-        {
-          this.cardInfo = res
-          console.log(this.cardInfo)
-        })
+      }).subscribe(res => {
+        this.cardInfo = res
+        this.temp = this.cardInfo
+        console.log(this.cardInfo)
 
-
-        if( window.localStorage )
-        {
-          if( !localStorage.getItem('firstLoad') )
-          {
-            localStorage['firstLoad'] = true;
-            window.location.reload();
-          }  
-          else
-            localStorage.removeItem('firstLoad');
-        }  
+      })
   }
+
+
   pushDetail(
     name: string,
     sector: string,
     province: string,
     district: string,
     type: string,
-    imageurl:string[],
+    imageurl: string[],
     opentime: string,
     closetime: string,
-    facility:{toilet:boolean, parking:boolean}[],
+    toilet: boolean,
+    parking: boolean,
     detail: string,
     contact: string,
     security: string,
     location: string,
   ) {
-    localStorage.setItem("detailName",name);
-    localStorage.setItem("detailSector",sector);
-    localStorage.setItem("detailProvine",province);
-    localStorage.setItem("detailDistrict",district);
-    localStorage.setItem("detailType",type); 
-    localStorage.setItem("detailOpentime",opentime);
-    localStorage.setItem("detailClosetime",closetime);
-    localStorage.setItem("detailDetail",detail);
-    localStorage.setItem("detailContact",contact);
-    localStorage.setItem("detailSecurity",security);
-    localStorage.setItem("detailLocation",location);
+    localStorage.setItem("detailName", name);
+    localStorage.setItem("detailSector", sector);
+    localStorage.setItem("detailProvine", province);
+    localStorage.setItem("detailDistrict", district);
+    localStorage.setItem("detailType", type);
+    localStorage.setItem("detailOpentime", opentime);
+    localStorage.setItem("detailClosetime", closetime);
+    localStorage.setItem("detailDetail", detail);
+    localStorage.setItem("detailContact", contact);
+    localStorage.setItem("detailSecurity", security);
+    localStorage.setItem("detailLocation", location);
 
     localStorage.setItem("detailImageurl", JSON.stringify(imageurl));
-    localStorage.setItem("detailFacilit", JSON.stringify(facility));
+    localStorage.setItem("detailToilet", JSON.stringify(toilet));
+    localStorage.setItem("detailParking", JSON.stringify(parking));
+  }
+
+  filterToilet(filter: boolean) {
+    this.checkToilet = !filter
+    console.log("toilet" + this.checkToilet);
+    this.cardInfo = [];
+    this.temp.forEach(item => {
+      if (item.toilet == this.checkToilet && item.parking == this.checkParking) {
+        this.cardInfo.push(item);
+      }
+    })
+    console.log(this.cardInfo)
+  }
+
+  filterParking(filter: boolean) {
+    this.checkParking = !filter
+    console.log("toilet" + this.checkParking)
+    this.cardInfo = [];
+    this.temp.forEach(item => {
+      if (item.parking == this.checkParking && item.toilet == this.checkToilet) {
+        this.cardInfo.push(item);
+        
+      }
+    })
+    console.log(this.cardInfo)
   }
 
 }

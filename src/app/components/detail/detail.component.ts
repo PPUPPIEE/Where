@@ -11,7 +11,7 @@ export class DetailComponent implements OnInit {
   Parking: string = "";
   Toilet: string = "";
 
-  test:{toilet:boolean, parking:boolean}[] =[];
+  facility:{toilet:boolean, parking:boolean}[] =[];
 
 
   constructor(public share: ShareService) {
@@ -34,12 +34,9 @@ export class DetailComponent implements OnInit {
   }
 
   setFacility(){
-    this.test.push(this.share.detailFacility);
-    this.test.forEach(item => {
-      if(item.toilet == true){this.Toilet = "ห้องน้ำ"}
-      if(item.parking == true){this.Parking = "ที่จอดรถ"}
-      if(item.parking == false && item.toilet == false){this.Parking = "-"}
-    })
+    if (this.share.detailParking == "true") { this.Parking = "ที่จอดรถ" }
+    if (this.share.detailToilet == "true") { this.Toilet = "ห้องน้ำ" }
+    if (this.share.detailToilet == "false" && this.share.detailParking == "false") { this.Parking = "-" }
   }
 
   setText(){

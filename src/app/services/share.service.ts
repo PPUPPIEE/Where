@@ -34,7 +34,8 @@ export class ShareService {
   detailDistrict= localStorage.getItem("detailDistrict");
   detailType= localStorage.getItem("detailType");
   detailImageurl= JSON.parse(localStorage.getItem("detailImageurl") || "[]");
-  detailFacility= JSON.parse(localStorage.getItem("detailFacilit") || "[]");
+  detailToilet= localStorage.getItem("detailToilet");
+  detailParking= localStorage.getItem("detailParking");
   detailOpentime= localStorage.getItem("detailOpentime");
   detailClosetime= localStorage.getItem("detailClosetime");
   detailDetail= localStorage.getItem("detailDetail");
