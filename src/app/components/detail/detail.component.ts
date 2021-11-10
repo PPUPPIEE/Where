@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from 'src/app/services/share.service';
+import { setTextRange } from 'typescript';
 
 @Component({
   selector: 'app-detail',
@@ -9,6 +10,8 @@ import { ShareService } from 'src/app/services/share.service';
 export class DetailComponent implements OnInit {
   Parking: string = "";
   Toilet: string = "";
+
+  test:{toilet:boolean, parking:boolean}[] =[];
 
 
   constructor(public share: ShareService) {
@@ -24,26 +27,34 @@ export class DetailComponent implements OnInit {
       else
         localStorage.removeItem('firstLoad');
     }
-
-    console.log(this.share.detailImageurl)
-
-    if (this.share.detailParking == "true") { this.Parking = "ที่จอดรถ" }
-    if (this.share.detailToilet == "true") { this.Toilet = "ห้องน้ำ" }
-    if (this.share.detailToilet == "false" && this.share.detailParking == "false") { this.Parking = "-" }
-
-
-    if (this.share.detailName == "null") { this.share.detailName = "-" }
-    if (this.share.detailProvine == "null") { this.share.detailProvine = "-" }
-    if (this.share.detailSector == "null") { this.share.detailSector = "-" }
-    if (this.share.detailDistrict == "null") { this.share.detailDistrict = "-" }
-    if (this.share.detailType == "null") { this.share.detailType = "-" }
-    if (this.share.detailOpentime == "null") { this.share.detailOpentime = "-" }
-    if (this.share.detailClosetime == "null") { this.share.detailClosetime = "-" }
-    if (this.share.detailDetail == "null") { this.share.detailDetail = "-" }
-    if (this.share.detailContact == "null") { this.share.detailContact = "-" }
-    if (this.share.detailSecurity == "null") { this.share.detailSecurity = "-" }
-    if (this.share.detailLocation == "null") { this.share.detailLocation = "-" }
+    
+    this.setFacility();
+    this.setText();
 
   }
+
+  setFacility(){
+    this.test.push(this.share.detailFacility);
+    this.test.forEach(item => {
+      if(item.toilet == true){this.Toilet = "ห้องน้ำ"}
+      if(item.parking == true){this.Parking = "ที่จอดรถ"}
+      if(item.parking == false && item.toilet == false){this.Parking = "-"}
+    })
+  }
+
+  setText(){
+    if (this.share.detailName == "") { this.share.detailName = "-" }
+    if (this.share.detailProvine == "") { this.share.detailProvine = "-" }
+    if (this.share.detailSector == "") { this.share.detailSector = "-" }
+    if (this.share.detailDistrict == "") { this.share.detailDistrict = "-" }
+    if (this.share.detailType == "") { this.share.detailType = "-" }
+    if (this.share.detailOpentime == "") { this.share.detailOpentime = "-" }
+    if (this.share.detailClosetime == "") { this.share.detailClosetime = "-" }
+    if (this.share.detailDetail == "") { this.share.detailDetail = "-" }
+    if (this.share.detailContact == "") { this.share.detailContact = "-" }
+    if (this.share.detailSecurity == "") { this.share.detailSecurity = "-" }
+    if (this.share.detailLocation == "") { this.share.detailLocation = "-" }
+  }
+
 
 }

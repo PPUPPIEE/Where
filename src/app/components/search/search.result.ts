@@ -8,7 +8,7 @@ export interface getSearchResult {
     imageurl: string[];
     opentime: string;
     closetime: string;
-    toilet: boolean;
+    facility: {toilet:boolean, parking:boolean}[];
     parking: boolean;
     detail: string;
     contact: string;

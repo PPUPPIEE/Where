@@ -40,6 +40,7 @@ export class SearchComponent implements OnInit {
       }).subscribe(res=>
         {
           this.cardInfo = res
+          console.log(this.cardInfo)
         })
 
 
@@ -63,8 +64,7 @@ export class SearchComponent implements OnInit {
     imageurl:string[],
     opentime: string,
     closetime: string,
-    toilet: boolean,
-    parking: boolean,
+    facility:{toilet:boolean, parking:boolean}[],
     detail: string,
     contact: string,
     security: string,
@@ -77,16 +77,13 @@ export class SearchComponent implements OnInit {
     localStorage.setItem("detailType",type); 
     localStorage.setItem("detailOpentime",opentime);
     localStorage.setItem("detailClosetime",closetime);
-    localStorage.setItem("detailToilet",JSON.stringify(toilet));
-    localStorage.setItem("detailParking",JSON.stringify(parking));
     localStorage.setItem("detailDetail",detail);
     localStorage.setItem("detailContact",contact);
     localStorage.setItem("detailSecurity",security);
     localStorage.setItem("detailLocation",location);
-    console.log(imageurl);
 
     localStorage.setItem("detailImageurl", JSON.stringify(imageurl));
-    
+    localStorage.setItem("detailFacilit", JSON.stringify(facility));
   }
 
 }
