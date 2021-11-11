@@ -1,4 +1,4 @@
-export interface getProvince{
+export interface getData{
     id: number;
     sector: string;
     name: string;

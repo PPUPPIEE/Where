@@ -4,7 +4,7 @@ import { ShareService } from 'src/app/services/share.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import { getProvince } from './locations';
+import { getData } from './locations';
 
 @Component({
   selector: 'app-form',
@@ -13,7 +13,7 @@ import { getProvince } from './locations';
 })
 export class FormComponent implements OnInit {
   public Form!: FormGroup;
-  provinceList: getProvince[] = [];
+  provinceList: getData[] = [];
   newProvinceList: string[] = [];
   province: string = 'จังหวัด';
   sector: string[] = [
@@ -49,7 +49,7 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProvince();
+    this.getData();
     this.Form = this.fb.group(
       {
         formName: new FormControl('', [Validators.required]),
@@ -66,9 +66,9 @@ export class FormComponent implements OnInit {
     );
   }
 
-  getProvince() {
+  getData() {
     this.http
-      .get<getProvince[]>(this.share.apiGetProvince)
+      .get<getData[]>(this.share.apiGetProvince)
       .subscribe((response) => {
         this.provinceList = response;
       });
