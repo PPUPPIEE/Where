@@ -41,10 +41,10 @@ export class AlltableComponent implements OnInit {
     });
   }
 
-  async onDelete(name: string,url: string[]) {
+  async onDelete(id: string,url: string[]) {
     await this.Deleteimage(url);
     this.http
-      .delete(this.share.apiDeleteLocation + '/' + name)
+      .delete(this.share.apiDeleteLocation + '/' + id)
       .subscribe((e) => {
         window.location.reload();
       });

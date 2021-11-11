@@ -14,4 +14,5 @@ export interface dataTable {
     security: string;
     location: string;
     check : boolean;
+    _id : string;
 }
