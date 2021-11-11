@@ -88,26 +88,54 @@ export class SearchComponent implements OnInit {
     localStorage.setItem("detailParking", JSON.stringify(parking));
   }
 
-  filterToilet(filter: boolean) {
-    this.checkToilet = !filter
-    console.log("toilet" + this.checkToilet);
+  filterToilet(filter: string) {
+    if(filter == "ห้องน้ำ"){this.checkToilet = !this.checkToilet};
+    if(filter == "ที่จอดรถ"){this.checkParking = !this.checkParking};
+    
+    console.log("toilet = " + this.checkToilet);
+    console.log("parking =" + this.checkParking);
+    
     this.cardInfo = [];
     this.temp.forEach(item => {
-      if (item.toilet == this.checkToilet && item.parking == this.checkParking) {
-        this.cardInfo.push(item);
+      if (this.checkToilet == true && this.checkParking == true) {
+        this.cardInfo = this.temp;
       }
+
+      if (this.checkToilet == true && this.checkParking == false) {
+        if(item.toilet == true && item.parking == false){
+          this.cardInfo.push(item)
+        }
+        if(item.toilet == true && item.parking == true){
+          this.cardInfo.push(item)
+        }
+      }
+
+      if (this.checkToilet == false && this.checkParking == true) {
+        if(item.toilet == false && item.parking == true){
+          this.cardInfo.push(item)
+        }
+        if(item.toilet == true && item.parking == true){
+          this.cardInfo.push(item)
+        }
+      }
+
+      if (this.checkToilet == false && this.checkParking == false) {
+        if(item.toilet == false && item.parking == false){
+          this.cardInfo.push(item)
+        }
+      }
+
     })
     console.log(this.cardInfo)
   }
 
   filterParking(filter: boolean) {
     this.checkParking = !filter
-    console.log("toilet" + this.checkParking)
+    console.log("parking" + this.checkParking)
     this.cardInfo = [];
     this.temp.forEach(item => {
       if (item.parking == this.checkParking && item.toilet == this.checkToilet) {
         this.cardInfo.push(item);
-        
       }
     })
     console.log(this.cardInfo)

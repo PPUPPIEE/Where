@@ -21,19 +21,13 @@
     </div>
     <div class="page-leftbar content">
       <h3>สิ่งอำนวยความสะดวก</h3>
-      <div class="form-check" >
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="filterToilet(this.checkToilet)" checked>
+      <div class="form-check" *ngFor ="let item of filterCheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="filterToilet(item)" checked>
         <label class="form-check-label">
-          ห้องน้ำ
+          {{item}}
         </label>
       </div>
 
-      <div class="form-check" >
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="filterParking(this.checkParking)" checked>
-        <label class="form-check-label">
-          ที่จอดรถ
-        </label>
-      </div>
     </div>
 
 
