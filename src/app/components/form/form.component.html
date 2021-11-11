@@ -5,10 +5,9 @@
     </div>
     <div class="row justify-content center mt-2">
         <div class="col-md-12" required="true">
-           <form action="">
             <div class="Nameform">
                 <label for="names">ชื่อสถานที่ :</label>
-                <input required type="text" name="Nameform" class="form-control" #inputName id="names" placeholder="ชื่อสถานที่">
+                <input type="text" name="Nameform" class="form-control" #inputName id="names" placeholder="ชื่อสถานที่">
             </div>
             <div class="locationsform">
                 <label for="location">Google Map :</label>
@@ -56,6 +55,7 @@
                 </div>
             </div>
             <div class="checkform">
+                <label class="check">สิ่งอำนวยความสดวก :</label>
                 <input type="checkbox" (click)="onSelectToilet()" class="form-control" id="toilet" name="toilet">
                 <label for="toilet"> ห้องน้ำ</label>
                 <input type="checkbox" (click)="onSelectParking()" class="form-control" id="bus" name="parking">
@@ -64,11 +64,11 @@
             <div class="Timeform">
                 <div class="md-form">
                     <label>เวลาเปิด :</label>
-                    <input type="time" name="opentime" class="form-control" #inputOpenTime mdbInput />
+                    <input type="time" value="08:00" name="opentime" class="form-control" #inputOpenTime mdbInput />
                 </div>
                 <div class="md-form">
                     <label>เวลาปิด :</label>
-                    <input type="time" name="closetime" class="form-control" #inputCloseTime mdbInput />
+                    <input type="time" value="22:00" name="closetime" class="form-control" #inputCloseTime mdbInput />
                 </div>
             </div>
             <div class="descriptionform">
@@ -84,6 +84,7 @@
                 <button type="button" class="form-control" [disabled]="checkCon() || checkifSelect"
                     (click)="fileInput.click()">Select File</button>
                 <label>จำนวน : {{image.length}}/3</label>
+                <button type="button" class="form-control" (click)="ClearImage()">Clear</button>
             </div>
             <div class="phonenumberform">
                 <label>ติดต่อ :</label>
@@ -103,14 +104,41 @@
                         inputDetail.value,
                         inputContact.value,
                         inputSecurity.value,
-                        inputDistrict.value
+                        inputDistrict.value,
+                        error,
+                        onsubmit
                         )">
                     Confirm
                 </button>
                 <button type="reset" (click)="onClear()">Clear</button>
             </div>
-           </form>
+
+            <ng-template #error let-modal>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">
+                        กรุณาตรวจสอบข้อมูลให้ครบถ้วน
+                    </h4>
+                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">
+                            ×
+                        </span>
+                    </button>
+                </div>
+            </ng-template>
+
+            <ng-template #onsubmit let-modal>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">
+                        ลงสถานที่เสร็จสิ้น กรุณารอทีมงานตรวจสอบ
+                    </h4>
+                    <button type="button" class="close" aria-label="Close" (click)="reloadWindow()">
+                        <span aria-hidden="true">
+                            ×
+                        </span>
+                    </button>
+                </div>
+            </ng-template>
+
         </div>
     </div>
 </div>
-

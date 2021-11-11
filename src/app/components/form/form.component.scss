@@ -62,6 +62,10 @@ nav {
   .Locationform {
     font-size: 26px;
     display: flex;
+    .dropdown-menu {
+      max-height: 300px;
+      overflow-y: auto;
+    }
     label {
       margin-right:0px;
       width: 100px;
@@ -88,6 +92,9 @@ nav {
   .checkform {
     font-size: 26px;
     display: flex;
+    .check {
+      margin-left: 0;
+    }
     label {
       margin-left: 10px;
       margin-right: 10px;
@@ -127,6 +134,8 @@ nav {
       border-radius: 10px;
       width: 10pc;
       margin-right: 1rem;
+      width: 11pc;
+      background: wheat;
     }
   }
   .phonenumberform {
