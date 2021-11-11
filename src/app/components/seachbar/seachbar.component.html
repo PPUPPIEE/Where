@@ -4,7 +4,7 @@
   </div>
   <div class="col p-3">
     <div ngbDropdown class="d-inline-block ">
-      <button class="btn btn-outline-primary " id="dropdownBasic1" ngbDropdownToggle>{{type}}</button>
+      <button class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>{{type}}</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1 ">
         <button ngbDropdownItem *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
           {{typeList[index]}}
@@ -15,7 +15,7 @@
 
   <div class="col p-3">
     <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary " id="dropdownBasic1" ngbDropdownToggle>{{sectorName}}</button>
+      <button class="btn btn-warning " id="dropdownBasic1" ngbDropdownToggle>{{sectorName}}</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button ngbDropdownItem *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
           {{sector[index]}}
@@ -26,7 +26,7 @@
 
   <div class="col p-3">
     <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic1 " ngbDropdownToggle
+      <button class="btn btn-warning" id="dropdownBasic1 " ngbDropdownToggle
         (click)="addProvince()">{{province}}</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button ngbDropdownItem *ngFor="let item of newProvinceList; let index=index"
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="col p-3">
-  <button type="button" class="btn btn-outline-primary" (click)="postSearch(input.value)">ค้นหา</button>
+  <button type="button" class="btn btn-warning" (click)="postSearch(input.value)">ค้นหา</button>
     </div>
     <div></div>
 
