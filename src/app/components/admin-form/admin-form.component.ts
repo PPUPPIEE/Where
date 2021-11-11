@@ -17,7 +17,11 @@ export class AdminFormComponent implements OnInit {
   password: string = "";
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if (this.share.checkTable === 'pass') {
+      this.router.navigate(['/unchecktable']);
+    }
+   }
 
   onchangeUser(value: string) {
     this.username = value;
@@ -37,6 +41,7 @@ export class AdminFormComponent implements OnInit {
   }
 
   onSubmit() {
+
     if (this.username === "admin" && this.password === "p@ssw0rd") {
       console.log("Login Success");
      localStorage.setItem("checkTable", "pass")
@@ -47,7 +52,6 @@ export class AdminFormComponent implements OnInit {
       this.username = "";
       this.password = "";
     }
-
   }
 
 }

@@ -26,6 +26,7 @@ export class ShareService {
   apiChangeStatus = "https://dry-dawn-24095.herokuapp.com/api/updatestatus";
   apiDeleteLocation = "https://dry-dawn-24095.herokuapp.com/api/deletelocation";
   apiGetall = "https://dry-dawn-24095.herokuapp.com/api/getall";
+  apiDeleteIMG = "https://dry-dawn-24095.herokuapp.com/api/firebase/delete"
   
   //detail
   detailName = localStorage.getItem("detailName");

@@ -30,7 +30,7 @@ export class AlltableComponent implements OnInit {
     url.forEach(url => {
       this.http
         .post(
-          'https://dry-dawn-24095.herokuapp.com/api/firebase/delete',
+          this.share.apiDeleteIMG,
           {
             name: url.substring(70, 87),
           },
@@ -49,10 +49,6 @@ export class AlltableComponent implements OnInit {
         window.location.reload();
       });
   }
-
-
-
-
 
 
   ngOnInit(): void {
