@@ -15,8 +15,8 @@ export class SearchComponent implements OnInit {
   cardInfo: getSearchResult[] = [];
   temp: getSearchResult[] = [];
 
-  checkToilet: boolean = true;
-  checkParking: boolean = true;
+  checkToilet: boolean = false;
+  checkParking: boolean = false;
 
 
   constructor(
@@ -89,38 +89,39 @@ export class SearchComponent implements OnInit {
   }
 
   filterToilet(filter: string) {
-    if(filter == "ห้องน้ำ"){this.checkToilet = !this.checkToilet};
-    if(filter == "ที่จอดรถ"){this.checkParking = !this.checkParking};
-    
+    if (filter == "ห้องน้ำ") { this.checkToilet = !this.checkToilet };
+    if (filter == "ที่จอดรถ") { this.checkParking = !this.checkParking };
+
     console.log("toilet = " + this.checkToilet);
     console.log("parking =" + this.checkParking);
-    
+
     this.cardInfo = [];
     this.temp.forEach(item => {
-      if (this.checkToilet == true && this.checkParking == true) {
-        this.cardInfo = this.temp;
-      }
 
       if (this.checkToilet == true && this.checkParking == false) {
-        if(item.toilet == true && item.parking == false){
+        if (item.toilet == true && item.parking == false) {
           this.cardInfo.push(item)
         }
-        if(item.toilet == true && item.parking == true){
+        if (item.toilet == true && item.parking == true) {
           this.cardInfo.push(item)
         }
       }
 
       if (this.checkToilet == false && this.checkParking == true) {
-        if(item.toilet == false && item.parking == true){
+        if (item.toilet == false && item.parking == true) {
           this.cardInfo.push(item)
         }
-        if(item.toilet == true && item.parking == true){
+        if (item.toilet == true && item.parking == true) {
           this.cardInfo.push(item)
         }
       }
 
       if (this.checkToilet == false && this.checkParking == false) {
-        if(item.toilet == false && item.parking == false){
+        this.cardInfo.push(item)
+      }
+
+      if (this.checkToilet == true && this.checkParking == true) {
+        if (item.toilet == true && item.parking == true) {
           this.cardInfo.push(item)
         }
       }
@@ -129,16 +130,6 @@ export class SearchComponent implements OnInit {
     console.log(this.cardInfo)
   }
 
-  filterParking(filter: boolean) {
-    this.checkParking = !filter
-    console.log("parking" + this.checkParking)
-    this.cardInfo = [];
-    this.temp.forEach(item => {
-      if (item.parking == this.checkParking && item.toilet == this.checkToilet) {
-        this.cardInfo.push(item);
-      }
-    })
-    console.log(this.cardInfo)
-  }
+
 
 }
