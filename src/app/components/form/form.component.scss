@@ -1,5 +1,5 @@
 nav {
-  background-color: wheat;
+  background-color: #7AE9CE;
   position: fixed;
   top: 0;
   width: 100%;
@@ -32,10 +32,16 @@ nav {
   box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
   border-radius: 10px;
   overflow: hidden;
+  input {
+    border: 2px solid #808080;
+  }
+  textarea {
+    border: 2px solid #808080;
+  }
   .tielname {
     text-align: center;
     margin-top: 1rem;
-    background-color: wheat;
+    background-color: #7AE9CE;
     padding-top: 10px;
     padding-bottom: 1px;
     border-radius: 10px;
@@ -88,6 +94,9 @@ nav {
     button {
       margin-right: 1rem;
     }
+    .a {
+      border: 2px solid #808080;
+    }
   }
   .checkform {
     font-size: 26px;
@@ -135,7 +144,7 @@ nav {
       width: 10pc;
       margin-right: 1rem;
       width: 11pc;
-      background: wheat;
+      background: #7AE9CE;
     }
   }
   .phonenumberform {
@@ -172,7 +181,7 @@ nav {
     button {
       padding: 15px 25px;
       font-size: 26px;
-      background: wheat;
+      background: #7AE9CE;
       border-radius: 50px;
       transition: all 0.25s ease;
       width: 10pc;
