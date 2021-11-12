@@ -1,5 +1,5 @@
 nav {
-  background-color: wheat;
+  background-color: #7AE9CE;
   position: fixed;
   top: 0;
   width: 100%;
@@ -29,13 +29,20 @@ nav {
   padding-bottom: 15px;
   height: 1000px;
   padding-top: 15px;
-  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.2);
+  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.4);
   border-radius: 10px;
   overflow: hidden;
+  background-color: #F8F7F9;
+  input {
+    border: 2px solid #808080;
+  }
+  textarea {
+    border: 2px solid #808080;
+  }
   .tielname {
     text-align: center;
     margin-top: 1rem;
-    background-color: wheat;
+    background-color: #7AE9CE;
     padding-top: 10px;
     padding-bottom: 1px;
     border-radius: 10px;
@@ -62,6 +69,10 @@ nav {
   .Locationform {
     font-size: 26px;
     display: flex;
+    .dropdown-menu {
+      max-height: 300px;
+      overflow-y: auto;
+    }
     label {
       margin-right:0px;
       width: 100px;
@@ -84,10 +95,16 @@ nav {
     button {
       margin-right: 1rem;
     }
+    .a {
+      border: 2px solid #808080;
+    }
   }
   .checkform {
     font-size: 26px;
     display: flex;
+    .check {
+      margin-left: 0;
+    }
     label {
       margin-left: 10px;
       margin-right: 10px;
@@ -127,6 +144,8 @@ nav {
       border-radius: 10px;
       width: 10pc;
       margin-right: 1rem;
+      width: 11pc;
+      background: #7AE9CE;
     }
   }
   .phonenumberform {
@@ -163,7 +182,7 @@ nav {
     button {
       padding: 15px 25px;
       font-size: 26px;
-      background: wheat;
+      background: #7AE9CE;
       border-radius: 50px;
       transition: all 0.25s ease;
       width: 10pc;
