@@ -42,6 +42,7 @@ body{
   grid-area: main;
 
 }
+
 img{
   width: 400px;
   overflow: hidden;
@@ -49,7 +50,7 @@ img{
   border: 9px;
 }
 h1{
-font-size: 20px;
+font-size: 22px;
 font-weight: bold;
 margin-top: 10px;
 margin-bottom: 30px;
@@ -60,13 +61,11 @@ span{
   color: rgb(104, 100, 100);
 }
 h3{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
   color: rgb(54, 54, 54);
 }
-h5{
-  font-size: 15px;
-}
+
 ้.info{
   font-size: 5px;
 }
@@ -87,12 +86,13 @@ h5{
     align-items: flex-start;
     .detail{
       height: 100%;
-      width: 80%;
+      width: 58%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       background-color: #FFF9E9;
       .name{
+        
         display : flex;
         flex-direction: column;
         align-items: flex-start;
@@ -100,6 +100,10 @@ h5{
       .info{
         align-self: flex-start;
         font-size: 16px;
+      }
+      .containimg{
+        max-height: 100%;
+        max-width: 100%;
       }
      
   
@@ -111,21 +115,20 @@ h5{
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      margin: 4px 2px;
+      margin: 2px 2px;
       cursor: pointer;
       border-radius: 16px;
       align-self: center;
       transition: 0.5s;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
       font-size: 15px;
-      font-weight: bold;
     }
     .detailbtn:hover {background-color: #FF6C02;}
   }
 }
-@media screen and (max-width: 1310px) {
 
-  
+
+@media screen and (max-width: 1310px) {
 .grid{
   display: grid;
   grid-template-columns: 5fr;

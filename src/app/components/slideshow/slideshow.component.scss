@@ -12,9 +12,9 @@ img{
   padding: 10px;
   height: 179px;
 }
-
-
-
+.carousel-control-next-icon{
+  background-color: greenyellow !important;
+}
   @media screen and (max-width: 860px) {
     .slideshow-img{
     height: 100%;
