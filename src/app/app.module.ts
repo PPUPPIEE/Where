@@ -16,7 +16,10 @@ import { NotFoundComponentComponent } from './components/not-found-component/not
 import { BannerComponent } from './components/banner/banner.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { SeachbarComponent } from './components/seachbar/seachbar.component';
-
+import { AdminFormComponent } from './components/admin-form/admin-form.component';
+import { TableComponent } from './components/admin-form/table/table.component';
+import { AlltableComponent } from './components/admin-form/alltable/alltable.component';
+import { AdNavbarComponent } from './components/admin-form/navbar/navbar.component';
 
 
 @NgModule({
@@ -32,8 +35,10 @@ import { SeachbarComponent } from './components/seachbar/seachbar.component';
     BannerComponent,
     SlideshowComponent,
     SeachbarComponent,
-    
-    
+    AdminFormComponent,
+    TableComponent,
+    AlltableComponent,
+    AdNavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -17,32 +17,18 @@
 
   <div class="grid">
     <div class="page-header content">
-<app-seachbar></app-seachbar>
+      <app-seachbar></app-seachbar>
     </div>
     <div class="page-leftbar content">
       <h3>สิ่งอำนวยความสะดวก</h3>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" >
-          รถนำเที่ยว
+      <div class="form-check" *ngFor ="let item of filterCheckbox">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="filterToilet(item)" >
+        <label class="form-check-label">
+          {{item}}
         </label>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-        <label class="form-check-label" >
-          ห้องน้ำ
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-        <label class="form-check-label" >
-          ที่จอดรถ
-        </label>
-      </div>
-  </div>  
-
-
-
+      <button type="button" class="btn btn-warning " onClick="window.location.reload();">ข้อมูลทั้งหมด</button>
+    </div>
 
 
     <div class="page-main content">
@@ -55,7 +41,7 @@
               <h1>{{item.name}}<span> {{item.type}}</span></h1>
               <h3>{{item.opentime}}-{{item.closetime}}</h3>
             </div>
-            <h4 class="info">อำเภอ {{item.district}} จังหวัด {{item.province}}</h4>
+            <h4 class="info">อำเภอ{{item.district}} จังหวัด{{item.province}}</h4>
           </div>
           <button class="detailbtn" (click)="pushDetail(
             item.name,
@@ -71,10 +57,9 @@
             item.detail,
             item.contact,
             item.security,
-            item.location)"
-            routerLink='/detail' routerLinkActive="active"
-          >
-          รายละเอียด</button>
+            item.location)" routerLink='/detail' routerLinkActive="active">
+            รายละเอียด
+          </button>
         </div>
       </div>
       <!--  -->

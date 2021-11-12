@@ -1,5 +1,4 @@
-export interface getSearchResult {
-
+export interface dataTable {
     name: string;
     sector: string;
     province: string;
@@ -8,11 +7,12 @@ export interface getSearchResult {
     imageurl: string[];
     opentime: string;
     closetime: string;
-    toilet:boolean,
-    parking:boolean,
+    toilet: boolean;
+    parking: boolean;
     detail: string;
     contact: string;
     security: string;
     location: string;
-
+    check : boolean;
+    _id : string;
 }

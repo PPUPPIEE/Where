@@ -10,6 +10,8 @@ export class ShareService {
   //no image
   noImage = "assets/img/no-image-available_1.png"
 
+  checkTable = localStorage.getItem("checkTable");
+
   searchName = localStorage.getItem("searchName");
   searchSector = localStorage.getItem("searchSector");
   searchProvince =localStorage.getItem("searchProvince");
@@ -20,7 +22,11 @@ export class ShareService {
   apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
   apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
   apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
-
+  apiGetUnchecked = "https://dry-dawn-24095.herokuapp.com/api/showuncheck";
+  apiChangeStatus = "https://dry-dawn-24095.herokuapp.com/api/updatestatus";
+  apiDeleteLocation = "https://dry-dawn-24095.herokuapp.com/api/deletelocation";
+  apiGetall = "https://dry-dawn-24095.herokuapp.com/api/getall";
+  apiDeleteIMG = "https://dry-dawn-24095.herokuapp.com/api/firebase/delete"
   
   //detail
   detailName = localStorage.getItem("detailName");
@@ -29,10 +35,10 @@ export class ShareService {
   detailDistrict= localStorage.getItem("detailDistrict");
   detailType= localStorage.getItem("detailType");
   detailImageurl= JSON.parse(localStorage.getItem("detailImageurl") || "[]");
-  detailOpentime= localStorage.getItem("detailOpentime");
-  detailClosetime= localStorage.getItem("detailClosetime");
   detailToilet= localStorage.getItem("detailToilet");
   detailParking= localStorage.getItem("detailParking");
+  detailOpentime= localStorage.getItem("detailOpentime");
+  detailClosetime= localStorage.getItem("detailClosetime");
   detailDetail= localStorage.getItem("detailDetail");
   detailContact= localStorage.getItem("detailContact");
   detailSecurity= localStorage.getItem("detailSecurity");
