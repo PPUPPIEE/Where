@@ -1,0 +1,77 @@
+<app-adnavbar></app-adnavbar>
+<table class="table table-responsive table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col ceeter">#</th>
+        <th class="name" sortable="name" scope="col center">Name</th>
+        <th class="type" scope="col">Type</th>
+        <th class="detail" scope="col">Detail</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Sector</th>
+        <th scope="col">Province</th>
+        <th scope="col">District</th>
+        <th scope="col">Toilet</th>
+        <th scope="col">Parking</th>
+        <th scope="col">Open Time</th>
+        <th scope="col">Close Time</th>
+        <th class="url" scope="col">Imageurl</th>
+        <th class="status" scope="col">Status</th>
+        <th  scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let index = index">
+        <th scope="row">{{ index + 1 }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.detail }}</td>
+        <td>{{ item.contact }}</td>
+        <td>ภาค{{ item.sector }}</td>
+        <td>{{ item.province }}</td>
+        <td>{{ item.district }}</td>
+        <td>{{ item.toilet ? "มี" : "ไม่มี" }}</td>    
+        <td>{{ item.parking ? "มี" : "ไม่มี"  }}</td>    
+        <td>{{ item.opentime }}</td>
+        <td>{{ item.closetime }}</td>
+        <td class="urlcol">
+          <a href="{{ item.imageurl[0] }}" target="_blank"
+            >1. {{ item.imageurl[0] }}</a
+          >
+          <br />
+          <a href="{{ item.imageurl[1] }}" target="_blank"
+            >2. {{ item.imageurl[1] }}</a
+          >
+          <br />
+          <a href="{{ item.imageurl[2] }}" target="_blank"
+            >3. {{ item.imageurl[2] }}</a
+          >
+        </td>
+       <td class= "checkStatus">{{item.check ? "ตรวจสอบเเล้ว":"ยังไม่ได้ตรวจสอบ"}}</td>
+       <td class= "DeleteButton" (click)="openDeleteDialog(delete)"><button>Delete</button></td>
+       <!-- modal delete -->
+      <ng-template #delete let-modal>
+        <div class="modal-body">
+          <p>{{item.name}} จะถูกลบออก</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-warning"
+            (click)="onDelete(item._id,item.imageurl)"
+          >
+            Confirm
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="modal.close('Close click')"
+          >
+            Close
+          </button>
+        </div>
+      </ng-template>
+      <!-- modal delete -->
+      </tr>
+    </tbody>
+  </table>
+  

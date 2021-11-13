@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="container px-4 px-lg-5">
+
+  <div class="image">
+    <div class="left">
+      <img class="img-fluid" class="naiy" src={{this.share.detailImageurl[0]}} alt="..." />
+    </div>
+    <div class="right">
+      <img class="img-fluid" src={{this.share.detailImageurl[1]}} alt="..." />
+      <img class="img-fluid" src={{this.share.detailImageurl[2]}} alt="..." />
+    </div>
+  </div>
+
+  <div class="card  my-2 py-2 ">
+    <div class="card-body">
+      <h3 class="card-title">{{this.share.detailName}}</h3>
+      <p class="card-text">{{this.share.detailDistrict}},{{this.share.detailProvine}}</p>
+    </div>
+  </div>
+
+  <div class="row gx-3 gx-lg-4">
+    <div class="col-md-4 mb-2">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="card-title">ประเภท</h3>
+          <p class="card-text">{{this.share.detailType}}</p>
+        </div>
+       
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="card-title">สิ่งอำนวยความสะดวก</h3>
+          <p class="card-text">{{Parking}} {{Toilet}}</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="card-title">ความปลอดภัย</h3>
+          <p class="card-text">{{this.share.detailSecurity}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card  my-2 py-2 ">
+    <div class="card-body">
+      <h5 class="card-title">รายละเอียด</h5>
+      <p class="card-text">{{this.share.detailDetail}}</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

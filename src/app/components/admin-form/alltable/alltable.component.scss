@@ -1,0 +1,36 @@
+
+
+table {
+    overflow-x:scroll;
+    max-height: 100vh;
+}
+thead {
+    z-index: 1000;
+    position: sticky; top: 0;
+    text-align: center;
+}
+.detail {
+    min-width: 700px;
+}
+.sector{
+    min-width: 150px;
+}
+.name{
+    min-width: 250px;
+}
+.type{
+    min-width: 150px;
+}
+
+.urlcol{
+    text-overflow: ellipsis;
+    min-width: 880px;
+}
+
+.status{
+    min-width: 150px;
+}
+
+.checkStatus{
+    text-align: center;
+}

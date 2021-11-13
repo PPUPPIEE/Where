@@ -1,0 +1,244 @@
+*{
+  font-family: 'Itim', cursive;
+}
+
+$white : #FFFFFF;
+
+body{
+  background:#ecebeb;
+ padding: 40px;
+ padding-left: 150px;
+ padding-right: 150px;
+ min-height: 760px;
+ 
+}
+
+.content{
+  background-color: $white;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  padding: 26px;
+  margin: 10px;
+  margin-top: 50px;
+  column-gap: 50px;
+  row-gap: 50px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: minmax(100px,1000px), minmax(1000px, auto);
+  grid-template-areas: 
+  'header header'
+  'leftbar main'
+  ;
+}
+.page-header {
+  
+  grid-area: header;
+}
+
+.page-leftbar {
+ grid-area: leftbar;
+
+}
+.page-main {
+  grid-area: main;
+
+}
+
+img{
+  width: 500px;
+  overflow: hidden;
+  object-fit: cover;
+  border: 9px;
+  
+}
+h1{
+font-size: 22px;
+font-weight: bold;
+margin-top: 10px;
+margin-bottom: 30px;
+}
+span{
+  font-size: 18px;
+  font-weight: normal;
+  color: rgb(104, 100, 100);
+}
+h3{
+  font-size: 22px;
+  font-weight: normal;
+  color: rgb(88, 88, 88);
+}
+
+
+
+.maincontent {
+  height: 250px;
+  border: #dbd6c8 1px solid;
+  display: flex;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  margin-bottom: 20px;
+  padding: 7px;
+
+  .container{
+    flex : 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    .detail{
+      height: 100%;
+      width: 58%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $white;
+      .name{
+        
+        display : flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .info{
+        align-self: flex-start;
+        font-size: 19px;
+      }
+      .containimg{
+        max-height: 100%;
+        max-width: 100%;
+      }
+     
+  
+    }
+    button {
+      background-color: #7AE9CE;
+      color: black;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 2px 2px;
+      cursor: pointer;
+      border-radius: 16px;
+      align-self: center;
+      transition: 0.5s;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      font-size: 18px;
+    }
+    .detailbtn:hover {
+      background-color: $white;
+      color: #7AE9CE;
+      border: 1px solid #19e7b4;
+    }
+  }
+}
+@media screen and (max-width: 1440px){
+  img{
+    width: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    border: 9px;
+  }
+  body{
+    background:#ecebeb;
+   padding: 40px;
+   padding-left: 70px;
+   padding-right: 70px;
+   min-height: 760px;
+   
+  }
+  
+}
+@media screen and (max-width: 1310px) {
+.grid{
+  display: grid;
+  grid-template-columns: 5fr;
+  grid-template-rows: minmax(auto, auto);
+  grid-template-areas: 
+  'header header'
+  'leftbar leftbar'
+  'main main'
+  ;
+}
+img{
+  width: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  border: 9px;
+}
+body{
+  
+ padding: 40px;
+ padding-left: 50px;
+ padding-right: 50px;
+}
+}
+@media screen and (max-width: 860px) {
+  .grid{
+    display: grid;
+    grid-template-columns: 5fr;
+    grid-template-rows: minmax(auto, auto);
+    grid-template-areas: 
+    'header header'
+    'leftbar leftbar'
+    'main main'
+    ;
+  }
+  body{
+    
+   padding: 0px;
+   padding-left: 0px;
+   padding-right: 0px;
+  }
+  
+  .maincontent {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    height: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    
+    button{
+      display: block;
+      height: auto;
+      padding: 10px;
+      
+      }
+      .container{
+        display: block;
+      }
+      .detail{
+        display: block;
+      }
+      .name{
+        display: block;
+      }
+  }
+  h1{
+    font-size: 17px;
+    }
+    span{
+      font-size: 14px;
+    }
+    img{
+      width: 100%;
+      overflow: hidden;
+      object-fit: cover;
+      border: 9px;
+      height: 150px;
+      justify-self: center;
+      display: flex;
+      align-self: center;
+      
+    }
+  
+  
+  
+  
+  
+  }

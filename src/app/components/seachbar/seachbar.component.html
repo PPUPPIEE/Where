@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="search-box">
+    <input type="text" class="searchTerm" placeholder="ใส่สิ่งที่คุณอยากรู้ที่นี่สิ" (keydown)="onEnterPress($event,input.value)" #input>
+  </div>
+  <div class="col p-3">
+    <div ngbDropdown class="d-inline-block ">
+      <button class="btn dropdown" id="dropdownBasic1" ngbDropdownToggle>{{type}}</button>
+      <div ngbDropdownMenu class= "dropdownmenu" aria-labelledby="dropdownBasic1 ">
+        <button ngbDropdownItem *ngFor="let item of typeList; let index=index" (click)="changeType(typeList[index])">
+          {{typeList[index]}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col p-3">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn dropdown" id="dropdownBasic1" ngbDropdownToggle>{{sectorName}}</button>
+      <div ngbDropdownMenu class= "dropdownmenu" aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem *ngFor="let item of sector; let index=index" (click)="changeSector(sector[index])">
+          {{sector[index]}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col p-3">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn dropdown" id="dropdownBasic1 " ngbDropdownToggle
+        (click)="addProvince()">{{province}}</button>
+      <div ngbDropdownMenu class= "dropdownmenu" aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem *ngFor="let item of newProvinceList; let index=index"
+          (click)="changeProvince(newProvinceList[index])">
+          {{newProvinceList[index]}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col p-3">
+  <button type="button" class="btn search" (click)="postSearch(input.value)">ค้นหา</button>
+    </div>
+    <div></div>
+
+    
