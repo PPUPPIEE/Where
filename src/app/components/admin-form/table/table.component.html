@@ -1,4 +1,5 @@
 <app-adnavbar></app-adnavbar>
+
 <table class="table table-responsive table-bordered table-striped">
   <thead class="table-dark">
     <tr>
@@ -18,10 +19,6 @@
       <th scope="col">Checkbox</th>
     </tr>
   </thead>
-
-  <ng-template [ngIf]="this.data.length === 0">
-    <h3>ไม่ค้นพบข้อมูล</h3>
-  </ng-template>
   <tbody>
     <tr *ngFor="let item of data; let index = index">
       <th scope="row">{{ index + 1 }}</th>
@@ -103,3 +100,7 @@
     </tr>
   </tbody>
 </table>
+
+<ng-template [ngIf]="this.data.length === 0">
+  <h3>ไม่ค้นพบข้อมูล</h3>
+</ng-template>
