@@ -14,4 +14,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    window.location.reload();
+    localStorage.setItem("searchName","");
+    localStorage.setItem("searchSector","");
+    localStorage.setItem("searchProvince","");
+    localStorage.setItem("searchType","");
+  }
+
 }

@@ -18,6 +18,10 @@
       <th scope="col">Checkbox</th>
     </tr>
   </thead>
+
+  <ng-template [ngIf]="this.data.length === 0">
+    <h3>ไม่ค้นพบข้อมูล</h3>
+  </ng-template>
   <tbody>
     <tr *ngFor="let item of data; let index = index">
       <th scope="row">{{ index + 1 }}</th>
