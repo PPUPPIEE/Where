@@ -46,7 +46,6 @@ import { AdNavbarComponent } from './components/admin-form/navbar/navbar.compone
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule
   ],
   providers: [ShareService],
