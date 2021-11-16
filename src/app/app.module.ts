@@ -26,6 +26,9 @@ import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,9 @@ import { TabMenuModule } from 'primeng/tabmenu';
     TableModule,
     ButtonModule,
     MessageModule,
-    TabMenuModule
+    TabMenuModule,
+    ConfirmDialogModule,
+  
   ],
   providers: [ShareService],
   bootstrap: [AppComponent]
