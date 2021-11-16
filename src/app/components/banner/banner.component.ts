@@ -17,7 +17,7 @@ export class BannerComponent implements OnInit {
   province: string = 'จังหวัด';
   sector: string[] = ["เหนือ", "ตะวันออกเฉียงเหนือ", "กลาง", "ใต้", "ตะวันออก", "ตะวันตก"];
   sectorName: string = 'ภาค';
-  typeList: string[] = ["ร้านอาหาร", "วัฒนธรรม", "สถานบันเทิงอารมณ์"];
+  typeList: string[] = ["ธรรมชาติ", "วัฒนธรรม", "ตลาด", "สถาปัตยกรรม"];
   type = "ประเภท";
 
   constructor(

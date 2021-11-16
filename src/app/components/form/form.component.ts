@@ -25,7 +25,7 @@ export class FormComponent implements OnInit {
     'ตะวันตก',
   ];
   sectorName: string = 'ภาค';
-  typeList: string[] = ['ธรรมชาติ', 'วัฒนธรรม', 'สถาปัตยกรรม', 'ตลาด'];
+  typeList: string[] = ["ธรรมชาติ", "วัฒนธรรม", "ตลาด", "สถาปัตยกรรม"];
   type = 'ประเภท';
   image: string[] = [];
   selectedFile!: FileList;
