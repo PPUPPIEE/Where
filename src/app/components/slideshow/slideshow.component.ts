@@ -8,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SlideshowComponent implements OnInit {
   images = [1, 2, 3, 4].map((n) => `assets/img/slideshow${n}.png`);
 
+  onClick(url:string){
+    
+  }
   
   constructor() { }
 

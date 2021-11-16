@@ -4,7 +4,7 @@ import { ShareService } from 'src/app/services/share.service';
 
 import {MenuItem} from 'primeng/api';
 
-import {ConfirmationService} from 'primeng/api';
+
 import Swal from 'sweetalert2'
 
 
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2'
   selector: 'app-adnavbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  providers: [ConfirmationService]
+
 })
 export class AdNavbarComponent implements OnInit {
 

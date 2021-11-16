@@ -3,6 +3,9 @@ img{
     border-radius: 50%;
     object-fit: cover;
     margin: 10px;
+    &:hover{
+      opacity: 85%;
+    }
 }
 .slideshow-img{
     display: flex;

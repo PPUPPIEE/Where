@@ -1,29 +1,40 @@
 <ngb-carousel *ngIf="images">
-  <ng-template ngbSlide >
-    <div class="slideshow-img">
-      <div class="picsum-img-wrapper">
-        <img [src]="images[0]" alt="Random first slide">
-        <img [src]="images[1]" alt="Random first slide">
-        <img [src]="images[2]" alt="Random first slide">
-        <img [src]="images[2]" alt="Random first slide">
-        <img [src]="images[2]" alt="Random first slide">
-        <img [src]="images[2]" alt="Random first slide">
-
-      </div>
-    </div>
-  </ng-template>
-  
   <ng-template ngbSlide>
     <div class="slideshow-img">
       <div class="picsum-img-wrapper">
-        <img [src]="images[1]" alt="Random second slide">
-        <img [src]="images[2]" alt="Random second slide">
-        <img [src]="images[3]" alt="Random second slide">
-        <img [src]="images[3]" alt="Random second slide">
-        <img [src]="images[3]" alt="Random second slide">
-        <img [src]="images[3]" alt="Random second slide">
+        <a href="https://www.facebook.com/sukiteenoithailand/" target="_blank">
+          <img [src]="images[0]" alt="Random first slide"
+        /></a>
+        <a href="https://www.facebook.com/buffetchannel/"  target="_blank">
+          <img [src]="images[1]" alt="Random first slide"
+        /></a>
+        <a href="https://www.facebook.com/airarmy1980/"  target="_blank">        
+          <img [src]="images[2]" alt="Random first slide" />
+          <img [src]="images[2]" alt="Random first slide" />
+          <img [src]="images[2]" alt="Random first slide" />
+          <img [src]="images[2]" alt="Random first slide" />
+        </a>
+
       </div>
     </div>
   </ng-template>
 
+  <ng-template ngbSlide>
+    <div class="slideshow-img">
+      <div class="picsum-img-wrapper">
+        <a href="https://www.facebook.com/buffetchannel/"  target="_blank">
+        <img [src]="images[1]" alt="Random second slide" />
+        </a>
+        <a href="https://www.facebook.com/airarmy1980/"  target="_blank">
+        <img [src]="images[2]" alt="Random second slide" />
+      </a>
+      <a href="https://www.beautybuffet.co.th" target="_blank">
+        <img [src]="images[3]" alt="Random second slide" />
+        <img [src]="images[3]" alt="Random second slide" />
+        <img [src]="images[3]" alt="Random second slide" />
+        <img [src]="images[3]" alt="Random second slide" />
+      </a>
+      </div>
+    </div>
+  </ng-template>
 </ngb-carousel>

@@ -43,11 +43,11 @@ img {
         display:flex;
         flex-direction: column;
     }
-    img{
-        height: 300px;
-    }
     .left{
-        max-height: 300px;
+      width: 75%;
+    }
+    .right{
+      width: 75%;
     }
 }
 
@@ -56,12 +56,10 @@ img {
         display:flex;
         flex-direction: column;
     }
-    img{
-        min-height: 150px;
-        width: 50%;
-    }
     .left{
-        min-height: 150px;
-        max-width: 50%;
+      width: 50%;
+    }
+    .right{
+      width: 50%;
     }
 }

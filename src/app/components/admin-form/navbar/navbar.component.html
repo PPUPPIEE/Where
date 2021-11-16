@@ -1,30 +1,6 @@
 <h1>Dashboard</h1>
 <nav>
-    <!-- <div class="left">
-      <a routerLink='/unchecktable' routerLinkActive="active">ตรวจสอบข้อมูล</a>
-      <a routerLink='/alltable' routerLinkActive="active">ข้อมูลทั้งหมด</a>
-      <a routerLink='/chart' routerLinkActive="active">Chart</a>
-    </div>
-    <div class="right">
-      <a (click)="onlogout()">ออกจากระบบ</a>
-    </div> -->
     <p-tabMenu  [model]="items" [activeItem]="activeItem"></p-tabMenu>
 
   </nav>
-
-  <!-- modal -->
-  <ng-template #logout let-modal>
-    <div class="modal-body">
-      <p>Do you want to logout?</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-warning" (click)="this.onlogout()">
-        Confirm
-      </button>
-      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">
-        Close
-      </button>
-    </div>
-  </ng-template>
-<!-- modal -->
 
