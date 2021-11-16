@@ -13,8 +13,6 @@
 <app-navbar></app-navbar>
 
 <body>
-
-
   <div class="grid">
     <div class="page-header content">
       <app-seachbar></app-seachbar>
@@ -27,14 +25,16 @@
           {{item}}
         </label>
       </div>
-      <button type="button" class="btn btn-warning " onClick="window.location.reload();">ข้อมูลทั้งหมด</button>
+      <!-- <button type="button" class="btn btn-warning " onClick="window.location.reload();">ข้อมูลทั้งหมด</button> -->
     </div>
 
 
     <div class="page-main content">
       <!-- Card -->
+      <ng-template [ngIf]="this.cardInfo.length === 0">
+        <h3>ไม่ค้นพบข้อมูล</h3>
+      </ng-template>
       <div class="maincontent" *ngFor="let item of cardInfo">
-      
         <img src={{item.imageurl[0]}}>
         <div class="container">
           <div class="detail">

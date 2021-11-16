@@ -1,6 +1,12 @@
+h1{
+    background: #c91812;
+    margin: 0;
+    color:rgb(255, 255, 255);
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
 nav{
-    padding: 25px 0 20px 25px;
-    background:wheat;
+    padding: 15px 0 10px 10px;
+    // background :  #000000c4;
     display: flex;
     justify-content: space-between;
     .left{ 
@@ -11,7 +17,7 @@ nav{
         transition: 0.3s;
         font-size: 20px;
         text-decoration: none;
-        color:black;
+        color:rgb(255, 255, 255);
         &:hover{
             color:orange;
             cursor: pointer;
@@ -25,7 +31,7 @@ nav{
             transition: 0.3s;
             font-size: 20px;
             text-decoration: none;
-            color:black;
+            color:rgb(255, 255, 255);
             &:hover{
                 color:orange;
                 cursor: pointer;

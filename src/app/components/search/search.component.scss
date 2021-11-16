@@ -1,6 +1,11 @@
+*{
+  font-family: 'Itim', cursive;
+}
+
+$white : #FFFFFF;
 
 body{
-  background:#FFF9E9;
+  background:#ecebeb;
  padding: 40px;
  padding-left: 150px;
  padding-right: 150px;
@@ -9,15 +14,15 @@ body{
 }
 
 .content{
-  background-color: #FFF9E9;
-  border: 2px solid #dbd6c8;
+  background-color: $white;
+  border: 1px solid #d8d8d8;
   border-radius: 3px;
-  padding: 30px;
+  padding: 26px;
   margin: 10px;
   margin-top: 50px;
   column-gap: 50px;
   row-gap: 50px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .grid{
@@ -30,12 +35,12 @@ body{
   ;
 }
 .page-header {
+  
   grid-area: header;
 }
 
 .page-leftbar {
-
-  grid-area: leftbar;
+ grid-area: leftbar;
 
 }
 .page-main {
@@ -44,10 +49,11 @@ body{
 }
 
 img{
-  width: 400px;
+  width: 500px;
   overflow: hidden;
   object-fit: cover;
   border: 9px;
+  
 }
 h1{
 font-size: 22px;
@@ -56,22 +62,21 @@ margin-top: 10px;
 margin-bottom: 30px;
 }
 span{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
   color: rgb(104, 100, 100);
 }
 h3{
-  font-size: 20px;
+  font-size: 22px;
   font-weight: normal;
-  color: rgb(54, 54, 54);
+  color: rgb(88, 88, 88);
 }
 
-้.info{
-  font-size: 5px;
-}
+
+
 .maincontent {
   height: 250px;
-  border: #dbd6c8 2px solid;
+  border: #dbd6c8 1px solid;
   display: flex;
   margin: 10px;
   border-radius: 4px;
@@ -84,13 +89,14 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin: 0;
     .detail{
       height: 100%;
       width: 58%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background-color: #FFF9E9;
+      background-color: $white;
       .name{
         
         display : flex;
@@ -99,7 +105,7 @@ h3{
       }
       .info{
         align-self: flex-start;
-        font-size: 16px;
+        font-size: 19px;
       }
       .containimg{
         max-height: 100%;
@@ -109,7 +115,7 @@ h3{
   
     }
     button {
-      background-color: #FFB400;
+      background-color: #7AE9CE;
       color: black;
       padding: 10px 20px;
       text-align: center;
@@ -121,13 +127,32 @@ h3{
       align-self: center;
       transition: 0.5s;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-      font-size: 15px;
+      font-size: 18px;
     }
-    .detailbtn:hover {background-color: #FF6C02;}
+    .detailbtn:hover {
+      background-color: $white;
+      color: #7AE9CE;
+      border: 1px solid #19e7b4;
+    }
   }
 }
-
-
+@media screen and (max-width: 1440px){
+  img{
+    width: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    border: 9px;
+  }
+  body{
+    background:#ecebeb;
+   padding: 40px;
+   padding-left: 70px;
+   padding-right: 70px;
+   min-height: 760px;
+   
+  }
+  
+}
 @media screen and (max-width: 1310px) {
 .grid{
   display: grid;
@@ -163,9 +188,13 @@ body{
     'main main'
     ;
   }
+  .page-header {
+  
+    grid-area: header;
+  }
   body{
-    
-   padding: 0px;
+  padding-top: 60px;
+  
    padding-left: 0px;
    padding-right: 0px;
   }
@@ -177,6 +206,8 @@ body{
     height: auto;
     margin-bottom: 30px;
     padding: 10px;
+    
+    
     
     button{
       display: block;
@@ -217,8 +248,3 @@ body{
   
   
   }
-
-
-
-
-

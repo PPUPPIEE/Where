@@ -1,4 +1,5 @@
 
+
 .row{
   padding-left: 100px;
   padding-right: 100px;
@@ -18,6 +19,7 @@
   padding: 10px;
   border-radius: 10px;
   width:100%;
+  border: 1px solid rgb(172, 171, 171);
   
 }
 .col{
@@ -34,15 +36,21 @@
 }
 .btn{
   width: 100%;
-  
+  &.dropdown{
+    background-color: #7AE9CE;
+    border : #7AE9CE;
+  }
+  &.search{
+    background-color: #ffa550;
+  }
+
 }
 
-.buttonSearch {
- 
-  justify-self: end;
+
+.dropdownmenu{
+  width: 100%;
 
 }
-
 
 
 @media  (max-width: 650px) {

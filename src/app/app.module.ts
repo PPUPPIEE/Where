@@ -21,6 +21,13 @@ import { TableComponent } from './components/admin-form/table/table.component';
 import { AlltableComponent } from './components/admin-form/alltable/alltable.component';
 import { AdNavbarComponent } from './components/admin-form/navbar/navbar.component';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ChartComponent } from './components/admin-form/chart/chart.component';
+import {ChartModule} from 'primeng/chart';
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import { MessageModule } from 'primeng/message';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -39,7 +46,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     AdminFormComponent,
     TableComponent,
     AlltableComponent,
-    AdNavbarComponent
+    AdNavbarComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +57,13 @@ import { TextMaskModule } from 'angular2-text-mask';
     HttpClientModule,
     FormsModule,
     TextMaskModule
+    ChartModule,
+    TableModule,
+    ButtonModule,
+    MessageModule,
+    TabMenuModule,
+    ConfirmDialogModule,
+  
   ],
   providers: [ShareService],
   bootstrap: [AppComponent]

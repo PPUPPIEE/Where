@@ -18,7 +18,7 @@ export class SeachbarComponent implements OnInit {
   province: string = 'จังหวัด';
   sector: string[] = ["เหนือ", "ตะวันออกเฉียงเหนือ", "กลาง", "ใต้", "ตะวันออก", "ตะวันตก"];
   sectorName: string = 'ภาค';
-  typeList: string[] = ["ร้านอาหาร", "วัฒนธรรม", "แหล่งท่องเที่ยวตามธรรมชาติ"];
+  typeList: string[] = ["ร้านอาหาร", "วัฒนธรรม", "ธรรมชาติ"];
   type = "ประเภท";
 
   constructor(
@@ -66,6 +66,13 @@ export class SeachbarComponent implements OnInit {
         this.newProvinceList.push(item.name)
       });
     }
+  }
+
+  onEnterPress(event: any,value: any) {
+    if (event.key === "Enter") {
+      this.postSearch(value);
+    }
+
   }
 
   postSearch(value:string) {

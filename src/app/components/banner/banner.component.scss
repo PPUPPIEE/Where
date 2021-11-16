@@ -2,7 +2,6 @@ img {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  
 }
 
 .search-box {
@@ -15,15 +14,14 @@ img {
   border: 1px solid gray;
   border-radius: 10px;
   padding: 10px;
-  left : 50%;
-  background-color:#F8F7F9;
+  left: 50%;
+  background-color: #f8f7f9;
   min-width: 300px;
   width: 70vh;
   height: 200px;
-  padding-left : 30px;
+  padding-left: 30px;
   padding-right: 30px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  
 }
 
 .searchTerm {
@@ -31,30 +29,47 @@ img {
   padding: 14px;
   border-radius: 10px;
   margin: 10px;
-  
-  width:100%;
-}
-.btn-info{
-  color: #000;
-  background-color:#7AE9CE;
-  width: 40%;
-  margin-top: 6%;
+  width: 100%;
 }
 
-.btn-outline-info{
-  color: #7AE9CE;
-  border-color: #C6BEBE;
- 
+.btn{
+  &.dropdown{
+    background-color: #ffffff;
+    border: 1px solid #7ae9ce;
+    color : #7ae9ce; 
+    &:hover{ 
+     opacity:70%;
+    }
+  }
+  
+
+
+}
+.btn-info {
+  color: #000;
+  background-color: #7ae9ce;
+  width: 40%;
+  margin-top: 6%;
+  border-color: #bbbbbb;
+  transition: 0.3s;
+  &:hover{
+    border : 1px solid #7ae9ce;
+    opacity: 90%;
+  }
+}
+
+.btn-outline-info {
+  color: #7ae9ce;
+  border-color: #c6bebe;
 }
 .dropdown-menu {
   max-height: 150px;
   overflow-y: auto;
 }
 
-@media  (max-width: 650px) {
-  button{
-    display:block;
+@media (max-width: 650px) {
+  button {
+    display: block;
     max-width: 100%;
   }
 }
-

@@ -19,7 +19,7 @@ export class AdminFormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.share.checkTable === 'pass') {
-      this.router.navigate(['/unchecktable']);
+      this.router.navigate(['/alltable']);
     }
    }
 
