@@ -237,4 +237,8 @@ export class FormComponent implements OnInit {
   reloadWindow(){
     window.location.reload();
   }
+  public mask = {
+    guide: true,
+    mask: [/\d/, /\d/, /\d/,'-', /\d/, /\d/, /\d/,'-', /\d/, /\d/, /\d/, /\d/]
+  };
 }

@@ -56,10 +56,14 @@
             </div>
             <div class="checkform">
                 <label class="check">สิ่งอำนวยความสดวก :</label>
-                <input type="checkbox" (click)="onSelectToilet()" class="form-control" id="toilet" name="toilet">
-                <label for="toilet"> ห้องน้ำ</label>
-                <input type="checkbox" (click)="onSelectParking()" class="form-control" id="bus" name="parking">
-                <label for="bus"> ที่จอดรถ </label>
+                <div class="che1">
+                    <input type="checkbox" (click)="onSelectToilet()" class="form-control" id="toilet" name="toilet">
+                    <label for="toilet"> ห้องน้ำ</label>
+                </div>
+                <div class="che1">
+                    <input type="checkbox" (click)="onSelectParking()" class="form-control" id="bus" name="parking">
+                    <label for="bus"> ที่จอดรถ </label>
+                </div>
             </div>
             <div class="Timeform">
                 <div class="md-form">
@@ -78,17 +82,22 @@
                 </div>
             </div>
             <div class="imgsform">
-                <label>เพิ่มรูปภาพ :</label>
-                <input class="uploadimgs" type="file" accept="image/png, image/jpeg" (change)="onFileChanged($event)"
+                <div style="display: flex;">
+                    <label>เพิ่มรูปภาพ :</label>
+                    <input class="uploadimgs" type="file" accept="image/png, image/jpeg" (change)="onFileChanged($event)"
                     required #fileInput>
                 <button type="button" class="form-control" [disabled]="checkCon() || checkifSelect"
                     (click)="fileInput.click()">Select File</button>
-                <label>จำนวน : {{image.length}}/3</label>
+                </div>
+                <div style="display: flex;">
+                    <label>จำนวน : {{image.length}}/3</label>
                 <button type="button" class="form-control" (click)="ClearImage()">Clear</button>
+                </div>
             </div>
             <div class="phonenumberform">
                 <label>ติดต่อ :</label>
-                <input type="number" class="form-control" #inputContact placeholder="เบอร์โทร">
+                <input type="text" [textMask]="mask" class="form-control" #inputContact placeholder="เบอร์โทร"
+                    mask="(0)0-0000-0000">
             </div>
             <div class="securityform">
                 <label>ความปลอดภัย :</label>
@@ -138,7 +147,6 @@
                     </button>
                 </div>
             </ng-template>
-
         </div>
     </div>
 </div>

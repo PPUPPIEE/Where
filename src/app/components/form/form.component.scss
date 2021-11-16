@@ -60,7 +60,6 @@ nav {
     display: flex;
     label {
       width: 180px;
-
     }
   }
   .descriptionform {
@@ -113,6 +112,9 @@ nav {
       margin-top: 5px;
       width: 20px;
       height: 30px;
+    }
+    .che1 {
+      display: flex;
     }
   }
   .Timeform {
@@ -186,6 +188,66 @@ nav {
       border-radius: 50px;
       transition: all 0.25s ease;
       width: 10pc;
+    }
+  }
+}
+
+@media screen and (max-width: 991px){
+  .container {
+    height: auto;
+    .Nameform {
+      display: grid;
+    }
+    .locationsform {
+      display: grid;
+    }
+    .Locationform {
+      display: grid;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .container {
+    height: auto;
+    .Nameform {
+      display: grid;
+    }
+    .locationsform {
+      display: grid;
+    }
+    .Locationform {
+      display: grid;
+    }
+    .Timeform {
+      display: grid;
+    }
+    .imgsform {
+      display: grid;
+    }
+  }
+}
+
+@media screen and (max-width: 507px){
+  .container {
+    height: auto;
+    .Nameform {
+      display: grid;
+    }
+    .locationsform {
+      display: grid;
+    }
+    .Locationform {
+      display: grid;
+    }
+    .Timeform {
+      display: grid;
+    }
+    .checkform {
+      display: inline;
+    }
+    .securityform {
+      display: inline;
     }
   }
 }

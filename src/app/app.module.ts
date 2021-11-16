@@ -20,6 +20,7 @@ import { AdminFormComponent } from './components/admin-form/admin-form.component
 import { TableComponent } from './components/admin-form/table/table.component';
 import { AlltableComponent } from './components/admin-form/alltable/alltable.component';
 import { AdNavbarComponent } from './components/admin-form/navbar/navbar.component';
+import { TextMaskModule } from 'angular2-text-mask';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AdNavbarComponent } from './components/admin-form/navbar/navbar.compone
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TextMaskModule
   ],
   providers: [ShareService],
   bootstrap: [AppComponent]
