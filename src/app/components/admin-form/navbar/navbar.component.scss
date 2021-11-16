@@ -1,6 +1,11 @@
+h1{
+    background: #c91812;
+    margin: 0;
+    color:rgb(255, 255, 255);
+}
 nav{
-    padding: 25px 0 20px 25px;
-    background :  #7AE9CE;
+    padding: 22px 0 20px 25px;
+    background :  #000000c4;
     display: flex;
     justify-content: space-between;
     .left{ 
@@ -11,7 +16,7 @@ nav{
         transition: 0.3s;
         font-size: 20px;
         text-decoration: none;
-        color:black;
+        color:rgb(255, 255, 255);
         &:hover{
             color:orange;
             cursor: pointer;
@@ -25,7 +30,7 @@ nav{
             transition: 0.3s;
             font-size: 20px;
             text-decoration: none;
-            color:black;
+            color:rgb(255, 255, 255);
             &:hover{
                 color:orange;
                 cursor: pointer;

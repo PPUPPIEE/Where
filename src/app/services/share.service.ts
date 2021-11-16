@@ -18,26 +18,26 @@ export class ShareService {
   searchType = localStorage.getItem("searchType");
   
   // api
-  // apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
-  // apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
-  // apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
-  // apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
-  // apiGetUnchecked = "https://dry-dawn-24095.herokuapp.com/api/showuncheck";
-  // apiChangeStatus = "https://dry-dawn-24095.herokuapp.com/api/updatestatus";
-  // apiDeleteLocation = "https://dry-dawn-24095.herokuapp.com/api/deletelocation";
-  // apiGetall = "https://dry-dawn-24095.herokuapp.com/api/getall";
-  // apiDeleteIMG = "https://dry-dawn-24095.herokuapp.com/api/firebase/delete";
+  apiSearch = "https://dry-dawn-24095.herokuapp.com/api/search";
+  apiGetProvince = "https://dry-dawn-24095.herokuapp.com/api/province";
+  apiAddImage = "https://dry-dawn-24095.herokuapp.com/api/firebase/upload";
+  apiAddLocation = "https://dry-dawn-24095.herokuapp.com/api/addlocation";
+  apiGetUnchecked = "https://dry-dawn-24095.herokuapp.com/api/showuncheck";
+  apiChangeStatus = "https://dry-dawn-24095.herokuapp.com/api/updatestatus";
+  apiDeleteLocation = "https://dry-dawn-24095.herokuapp.com/api/deletelocation";
+  apiGetall = "https://dry-dawn-24095.herokuapp.com/api/getall";
+  apiDeleteIMG = "https://dry-dawn-24095.herokuapp.com/api/firebase/delete";
   
   //api local
-  apiSearch = "http://localhost:5000/api/search";
-  apiGetProvince = "http://localhost:5000/api/province";
-  apiAddImage = "http://localhost:5000/api/firebase/upload";
-  apiAddLocation = "http://localhost:5000/api/addlocation";
-  apiGetUnchecked = "http://localhost:5000/api/showuncheck";
-  apiChangeStatus = "http://localhost:5000/api/updatestatus";
-  apiDeleteLocation = "http://localhost:5000/api/deletelocation";
-  apiGetall = "http://localhost:5000/api/getall";
-  apiDeleteIMG = "http://localhost:5000/api/firebase/delete";
+  // apiSearch = "http://localhost:5000/api/search";
+  // apiGetProvince = "http://localhost:5000/api/province";
+  // apiAddImage = "http://localhost:5000/api/firebase/upload";
+  // apiAddLocation = "http://localhost:5000/api/addlocation";
+  // apiGetUnchecked = "http://localhost:5000/api/showuncheck";
+  // apiChangeStatus = "http://localhost:5000/api/updatestatus";
+  // apiDeleteLocation = "http://localhost:5000/api/deletelocation";
+  // apiGetall = "http://localhost:5000/api/getall";
+  // apiDeleteIMG = "http://localhost:5000/api/firebase/delete";
 
   //detail
   detailName = localStorage.getItem("detailName");
