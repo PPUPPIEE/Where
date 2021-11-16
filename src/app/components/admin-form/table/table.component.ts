@@ -11,6 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
+  products: dataTable[] = [];
   data: dataTable[] = [];
   correct: string = 'correct';
   delete: string = 'delete';
@@ -72,6 +73,7 @@ export class TableComponent implements OnInit {
       .get<dataTable[]>(this.share.apiGetUnchecked)
       .subscribe((res) => {
         this.data = res;
+        this.products = res;
       });
 
     if (window.localStorage) {

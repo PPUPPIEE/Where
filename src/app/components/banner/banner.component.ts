@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from 'src/app/services/share.service';
-
+import { Router } from '@angular/router';
 import { getProvince } from './province';
 
 
@@ -22,7 +22,8 @@ export class BannerComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    public share: ShareService) { }
+    public share: ShareService,
+    public router: Router) { }
 
   ngOnInit(): void {
     this.getProvince();
@@ -58,6 +59,14 @@ export class BannerComponent implements OnInit {
         this.newProvinceList.push(item.name)
       });
     }
+  }
+
+  async onEnterPress(event: any,value: string) {
+    if (event.key === "Enter") {
+    await   this.postSearch(value);
+    await  this.router.navigate(['/search']); 
+    }
+
   }
 
   postSearch(value: string) {

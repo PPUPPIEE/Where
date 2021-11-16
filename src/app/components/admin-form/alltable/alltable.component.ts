@@ -9,8 +9,22 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-alltable',
   templateUrl: './alltable.component.html',
   styleUrls: ['./alltable.component.scss'],
+  styles: [`
+        :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+
+        .layout-news-active :host ::ng-deep .p-datatable tr > th {
+            top: 0;
+        }
+    `]
 })
 export class AlltableComponent implements OnInit {
+  products: dataTable[] = [];
+
   data: dataTable[] = [];
   correct: string = 'correct';
   delete: string = 'delete';
@@ -56,6 +70,7 @@ export class AlltableComponent implements OnInit {
       .get<dataTable[]>(this.share.apiGetall)
       .subscribe((res) => {
         this.data = res;
+        this.products = res;
         console.log(this.data);
         
       });
@@ -72,4 +87,5 @@ export class AlltableComponent implements OnInit {
       this.router.navigate(['/admin']);
     }
   }
+
 }
