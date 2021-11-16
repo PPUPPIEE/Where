@@ -41,7 +41,7 @@
                 <div ngbDropdown class="d-inline-block">
                     <button class="a form-control" type="button" id="dropdownBasic1 " ngbDropdownToggle
                         (click)="addProvince()" name="province">{{province}}</button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <div style="width: 100%;" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button class="form-control" ngbDropdownItem type="button"
                             *ngFor="let item of newProvinceList; let index=index"
                             (click)="changeProvince(newProvinceList[index])">
