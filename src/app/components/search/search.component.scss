@@ -188,9 +188,13 @@ body{
     'main main'
     ;
   }
+  .page-header {
+  
+    grid-area: header;
+  }
   body{
-    
-   padding: 0px;
+  padding-top: 60px;
+  
    padding-left: 0px;
    padding-right: 0px;
   }
@@ -202,6 +206,8 @@ body{
     height: auto;
     margin-bottom: 30px;
     padding: 10px;
+    
+    
     
     button{
       display: block;

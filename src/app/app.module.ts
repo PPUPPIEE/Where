@@ -22,7 +22,10 @@ import { AlltableComponent } from './components/admin-form/alltable/alltable.com
 import { AdNavbarComponent } from './components/admin-form/navbar/navbar.component';
 import { ChartComponent } from './components/admin-form/chart/chart.component';
 import {ChartModule} from 'primeng/chart';
-
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import { MessageModule } from 'primeng/message';
+import { TabMenuModule } from 'primeng/tabmenu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,7 @@ import {ChartModule} from 'primeng/chart';
     TableComponent,
     AlltableComponent,
     AdNavbarComponent,
-    ChartComponent
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,11 @@ import {ChartModule} from 'primeng/chart';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ChartModule
+    ChartModule,
+    TableModule,
+    ButtonModule,
+    MessageModule,
+    TabMenuModule
   ],
   providers: [ShareService],
   bootstrap: [AppComponent]
