@@ -56,7 +56,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    TextMaskModule
+    TextMaskModule,
     ChartModule,
     TableModule,
     ButtonModule,
