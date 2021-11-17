@@ -74,6 +74,8 @@ export class TableComponent implements OnInit {
       .subscribe((res) => {
         this.data = res;
         this.products = res;
+        console.log(this.data);
+        
       });
 
     if (window.localStorage) {

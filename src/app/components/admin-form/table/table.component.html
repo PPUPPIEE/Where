@@ -106,13 +106,12 @@
             <!-- modal delete -->
     </tr>
 
-
+    <ng-template [ngIf]="this.data.length === 0">
+      <h3>ไม่ค้นพบข้อมูล</h3>
+    </ng-template>
 
 
       <!-- <button (click)="openCorrectDialog(correct)">Confirm</button>
         <button (click)="openDeleteDialog(delete)">Delete</button> -->
 
 
-<ng-template [ngIf]="this.data.length === 0">
-  <h3>ไม่ค้นพบข้อมูล</h3>
-</ng-template>
