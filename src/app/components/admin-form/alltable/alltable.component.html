@@ -78,3 +78,8 @@
 <!-- modal -->
   </ng-template>
 </p-table>
+
+
+<ng-template [ngIf]="this.data.length === 0">
+  <h3>ไม่ค้นพบข้อมูล</h3>
+</ng-template>
