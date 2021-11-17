@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from 'src/app/services/share.service';
 import { dataTable } from '../alltable/data';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -20,9 +20,13 @@ export class ChartComponent implements OnInit {
   market: number[] = [0, 0, 0, 0, 0, 0];
   building: number[] = [0, 0, 0, 0, 0, 0];
 
-  constructor(private http: HttpClient, public share: ShareService) {}
+  constructor(private http: HttpClient, public share: ShareService,public router: Router,) {}
 
   ngOnInit(): void {
+    if (this.share.checkTable === 'pass') {
+    } else {
+      this.router.navigate(['/admin']);
+    }
     this.http
       .post<dataTable[]>(this.share.apiSearch, {
         name: '',
