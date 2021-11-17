@@ -1,5 +1,5 @@
 {
-  "name": "nivethk",
+  "name": "where",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -63,12 +63,12 @@
   "main": "karma.conf.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yoyozapp/nivethk.git"
+    "url": "git+https://github.com/yoyozapp/where.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yoyozapp/nivethk/issues"
+    "url": "https://github.com/yoyozapp/where/issues"
   },
-  "homepage": "https://github.com/yoyozapp/nivethk#readme"
+  "homepage": "https://github.com/yoyozapp/where#readme"
 }
