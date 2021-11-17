@@ -45,7 +45,7 @@ export class AdNavbarComponent implements OnInit {
             denyButtonText: `Cancle`,
           }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire('You have logout!', '', 'success').then(()=>{
+              Swal.fire('You have logout!','', 'success').then(()=>{
                 this.onlogout();
               })
             }
