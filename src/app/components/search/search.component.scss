@@ -23,6 +23,7 @@ body{
   column-gap: 50px;
   row-gap: 50px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
 }
 
 .grid{
@@ -41,11 +42,14 @@ body{
 
 .page-leftbar {
  grid-area: leftbar;
+ height: 60vh;
+ overflow-y: auto;
 
 }
 .page-main {
   grid-area: main;
-
+  height: 60vh;
+  overflow-y: auto;
 }
 
 img{
@@ -83,6 +87,7 @@ h3{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   margin-bottom: 20px;
   padding: 7px;
+
 
   .container{
     flex : 1;
