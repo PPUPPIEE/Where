@@ -31,7 +31,7 @@ export class SeachbarComponent implements OnInit {
   }
 
   getProvince() {
-    this.http.get<getProvince[]>('https://dry-dawn-24095.herokuapp.com/api/province').subscribe(
+    this.http.get<getProvince[]>('http://localhost:5000/api/province').subscribe(
       response => { this.provinceList = response }
     )
   }
